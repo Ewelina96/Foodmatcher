@@ -30,8 +30,14 @@ class _MealTypePageState extends State<MealTypePage> {
                   )
                 ],
                 image: DecorationImage(
-                  image: AssetImage("images/pizza.jpg"),
+                  image: AssetImage("images/food.jpg"),
                   fit: BoxFit.cover,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'What would You like to eat?',
+                  style: Theme.of(context).textTheme.headline1,
                 ),
               ),
             ),

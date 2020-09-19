@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
           ),
           buttonColor: Colors.green[100],
           height: 48.0,
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
         ),
       ),
       home: MealTypePage(),
