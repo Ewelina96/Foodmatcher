@@ -31,7 +31,9 @@ class _PreferencesPageState extends State<PreferencesPage> {
     void _navigateToDishes() {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Dishes()),
+        MaterialPageRoute(
+            builder: (context) =>
+                Dishes(preferences: preferences..add(widget.type))),
       );
     }
 

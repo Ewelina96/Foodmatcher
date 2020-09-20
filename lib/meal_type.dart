@@ -55,7 +55,7 @@ class _MealTypePageState extends State<MealTypePage> {
                 SizedBox(height: 16.0),
                 RaisedButton(
                   onPressed: () {
-                    _navigateToPreferences('Breakfast');
+                    _navigateToPreferences('breakfast');
                   },
                   child: Text(
                     'Breakfast',
@@ -65,7 +65,7 @@ class _MealTypePageState extends State<MealTypePage> {
                 SizedBox(height: 16.0),
                 RaisedButton(
                   onPressed: () {
-                    _navigateToPreferences('Lunch');
+                    _navigateToPreferences('lunch');
                   },
                   child: Text(
                     'Lunch',
@@ -75,7 +75,7 @@ class _MealTypePageState extends State<MealTypePage> {
                 SizedBox(height: 16.0),
                 RaisedButton(
                   onPressed: () {
-                    _navigateToPreferences('Dinner');
+                    _navigateToPreferences('dinner');
                   },
                   child: Text(
                     'Dinner',
@@ -85,7 +85,7 @@ class _MealTypePageState extends State<MealTypePage> {
                 SizedBox(height: 16.0),
                 RaisedButton(
                   onPressed: () {
-                    _navigateToPreferences('Dessert');
+                    _navigateToPreferences('dessert');
                   },
                   child: Text(
                     'Dessert',
@@ -95,7 +95,7 @@ class _MealTypePageState extends State<MealTypePage> {
                 SizedBox(height: 16.0),
                 RaisedButton(
                   onPressed: () {
-                    _navigateToPreferences('Snacks');
+                    _navigateToPreferences('snacks');
                   },
                   child: Text(
                     'Snacks',
