@@ -11,19 +11,19 @@ class PreferencesPage extends StatefulWidget {
 }
 
 class _PreferencesPageState extends State<PreferencesPage> {
-  List<String> preferences = [];
+  List<String> _preferences = [];
   void _changeState(bool value, String property) {
     setState(() {
       if (value == true) {
-        preferences.add(property);
+        _preferences.add(property);
       } else {
-        preferences.remove(property);
+        _preferences.remove(property);
       }
     });
   }
 
   bool _checkboxValue(String property) {
-    return preferences.contains(property);
+    return _preferences.contains(property);
   }
 
   @override
@@ -32,8 +32,10 @@ class _PreferencesPageState extends State<PreferencesPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) =>
-                Dishes(preferences: preferences..add(widget.type))),
+          builder: (context) => Dishes(
+            preferences: _preferences..add(widget.type),
+          ),
+        ),
       );
     }
 
