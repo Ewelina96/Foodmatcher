@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:dietmatcher/preferences_page.dart';
 import 'package:flutter/material.dart';
 
 class MealTypePage extends StatefulWidget {
@@ -10,6 +10,13 @@ class MealTypePage extends StatefulWidget {
 class _MealTypePageState extends State<MealTypePage> {
   @override
   Widget build(BuildContext context) {
+    void _navigateToPreferences(String type) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PreferencesPage(type: type)),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -47,7 +54,9 @@ class _MealTypePageState extends State<MealTypePage> {
               children: <Widget>[
                 SizedBox(height: 16.0),
                 RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _navigateToPreferences('Breakfast');
+                  },
                   child: Text(
                     'Breakfast',
                     style: Theme.of(context).textTheme.headline2,
@@ -55,7 +64,9 @@ class _MealTypePageState extends State<MealTypePage> {
                 ),
                 SizedBox(height: 16.0),
                 RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _navigateToPreferences('Lunch');
+                  },
                   child: Text(
                     'Lunch',
                     style: Theme.of(context).textTheme.headline2,
@@ -63,7 +74,9 @@ class _MealTypePageState extends State<MealTypePage> {
                 ),
                 SizedBox(height: 16.0),
                 RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _navigateToPreferences('Dinner');
+                  },
                   child: Text(
                     'Dinner',
                     style: Theme.of(context).textTheme.headline2,
@@ -71,13 +84,24 @@ class _MealTypePageState extends State<MealTypePage> {
                 ),
                 SizedBox(height: 16.0),
                 RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _navigateToPreferences('Dessert');
+                  },
                   child: Text(
                     'Dessert',
                     style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
                 SizedBox(height: 16.0),
+                RaisedButton(
+                  onPressed: () {
+                    _navigateToPreferences('Snacks');
+                  },
+                  child: Text(
+                    'Snacks',
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                ),
               ],
             ),
           ],
