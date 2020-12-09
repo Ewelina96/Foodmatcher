@@ -32,7 +32,7 @@ class _DishesState extends State<Dishes> {
         ),
         headers: {
           "x-rapidapi-host": "tasty.p.rapidapi.com",
-          "x-rapidapi-key": "API-KEY"
+          "x-rapidapi-key": "b687123a52mshe82b3cb6713b352p154f08jsn00cea7a2c943"
         });
     if (response.statusCode == 200) {
       var data = json.decode(response.body);

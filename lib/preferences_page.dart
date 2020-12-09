@@ -46,91 +46,89 @@ class _PreferencesPageState extends State<PreferencesPage> {
           style: Theme.of(context).textTheme.headline1,
         ),
       ),
-      body: Container(
-        child: Column(children: <Widget>[
-          ListView(
-              padding: EdgeInsets.all(10.0),
-              shrinkWrap: true,
-              children: <Widget>[
-                CheckboxListTile(
-                    title: Text(
-                      'Vegan',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('vegan'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'vegan');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Vegetarian',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('vegetarian'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'vegetarian');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Under 30 minutes',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('under_30_minutes'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'under_30_minutes');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Gluten free',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('gluten_free'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'gluten_free');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Dairy free',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('dairy_free'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'dairy_free');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Low carb',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('low_carb'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'low_carb');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Healthy',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('healthy'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'healthy');
-                    }),
-                CheckboxListTile(
-                    title: Text(
-                      'Kid friendly',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    value: _checkboxValue('kid_friendly'),
-                    onChanged: (bool value) {
-                      _changeState(value, 'kid_friendly');
-                    }),
-              ]),
-          RaisedButton(
+      body: ListView(padding: EdgeInsets.all(8), children: <Widget>[
+        Column(children: <Widget>[
+          CheckboxListTile(
+              title: Text(
+                'Vegan',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('vegan'),
+              onChanged: (bool value) {
+                _changeState(value, 'vegan');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Vegetarian',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('vegetarian'),
+              onChanged: (bool value) {
+                _changeState(value, 'vegetarian');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Under 30 minutes',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('under_30_minutes'),
+              onChanged: (bool value) {
+                _changeState(value, 'under_30_minutes');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Gluten free',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('gluten_free'),
+              onChanged: (bool value) {
+                _changeState(value, 'gluten_free');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Dairy free',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('dairy_free'),
+              onChanged: (bool value) {
+                _changeState(value, 'dairy_free');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Low carb',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('low_carb'),
+              onChanged: (bool value) {
+                _changeState(value, 'low_carb');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Healthy',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('healthy'),
+              onChanged: (bool value) {
+                _changeState(value, 'healthy');
+              }),
+          CheckboxListTile(
+              title: Text(
+                'Kid friendly',
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              value: _checkboxValue('kid_friendly'),
+              onChanged: (bool value) {
+                _changeState(value, 'kid_friendly');
+              }),
+        ]),
+        Container(
+          width: 40,
+          child: RaisedButton(
             onPressed: _navigateToDishes,
             child: Text('Apply', style: Theme.of(context).textTheme.headline2),
           ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }
