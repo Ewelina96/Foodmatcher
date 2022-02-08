@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'package:dietmatcher/models/BasicRecipe.dart';
+import 'package:dietmatcher/models/basic_recipe.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Dishes extends StatefulWidget {
-  Dishes({Key key, this.preferences}) : super(key: key);
+  Dishes({Key? key, required this.preferences}) : super(key: key);
   final List<String> preferences;
   @override
   _DishesState createState() => _DishesState();
