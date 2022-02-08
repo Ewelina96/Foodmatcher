@@ -2,10 +2,10 @@ import 'package:dietmatcher/presentation/style/app_colors.dart';
 import 'package:dietmatcher/presentation/style/app_dimensions.dart';
 import 'package:flutter/material.dart';
 
-class PreferencessButton extends StatelessWidget {
+class RedirectButton extends StatelessWidget {
   final Function() onPressed;
   final String text;
-  const PreferencessButton({
+  const RedirectButton({
     required this.text,
     required this.onPressed,
     Key? key,

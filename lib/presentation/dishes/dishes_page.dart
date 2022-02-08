@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'package:dietmatcher/models/basic_recipe.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
-class Dishes extends StatefulWidget {
-  Dishes({Key? key, required this.preferences}) : super(key: key);
+class DishesPage extends StatefulWidget {
+  DishesPage({Key? key, required this.preferences}) : super(key: key);
   final List<String> preferences;
   @override
-  _DishesState createState() => _DishesState();
+  _DishesPageState createState() => _DishesPageState();
 }
 
-class _DishesState extends State<Dishes> {
+class _DishesPageState extends State<DishesPage> {
   int _recipeNumber = 0;
   List<BasicRecipe> _recipes = [];
   void _increaseRecipeNumber() {
@@ -32,7 +32,7 @@ class _DishesState extends State<Dishes> {
         ),
         headers: {
           "x-rapidapi-host": "tasty.p.rapidapi.com",
-          "x-rapidapi-key": "b687123a52mshe82b3cb6713b352p154f08jsn00cea7a2c943"
+          "x-rapidapi-key": String.fromEnvironment('apiKey'),
         });
     if (response.statusCode == 200) {
       var data = json.decode(response.body);

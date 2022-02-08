@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$PreferencesStateTearOff {
   const _$PreferencesStateTearOff();
 
-  _PreferencesStateInitial initial(List<String> preferences) {
-    return _PreferencesStateInitial(
+  _PreferencesStateSelectedOptions selectedOptions(List<String> preferences) {
+    return _PreferencesStateSelectedOptions(
       preferences,
     );
   }
@@ -34,33 +34,34 @@ mixin _$PreferencesState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> preferences) initial,
+    required TResult Function(List<String> preferences) selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> preferences)? initial,
+    TResult Function(List<String> preferences)? selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> preferences)? initial,
+    TResult Function(List<String> preferences)? selectedOptions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PreferencesStateInitial value) initial,
+    required TResult Function(_PreferencesStateSelectedOptions value)
+        selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PreferencesStateInitial value)? initial,
+    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PreferencesStateInitial value)? initial,
+    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -101,32 +102,34 @@ class _$PreferencesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PreferencesStateInitialCopyWith<$Res>
+abstract class _$PreferencesStateSelectedOptionsCopyWith<$Res>
     implements $PreferencesStateCopyWith<$Res> {
-  factory _$PreferencesStateInitialCopyWith(_PreferencesStateInitial value,
-          $Res Function(_PreferencesStateInitial) then) =
-      __$PreferencesStateInitialCopyWithImpl<$Res>;
+  factory _$PreferencesStateSelectedOptionsCopyWith(
+          _PreferencesStateSelectedOptions value,
+          $Res Function(_PreferencesStateSelectedOptions) then) =
+      __$PreferencesStateSelectedOptionsCopyWithImpl<$Res>;
   @override
   $Res call({List<String> preferences});
 }
 
 /// @nodoc
-class __$PreferencesStateInitialCopyWithImpl<$Res>
+class __$PreferencesStateSelectedOptionsCopyWithImpl<$Res>
     extends _$PreferencesStateCopyWithImpl<$Res>
-    implements _$PreferencesStateInitialCopyWith<$Res> {
-  __$PreferencesStateInitialCopyWithImpl(_PreferencesStateInitial _value,
-      $Res Function(_PreferencesStateInitial) _then)
-      : super(_value, (v) => _then(v as _PreferencesStateInitial));
+    implements _$PreferencesStateSelectedOptionsCopyWith<$Res> {
+  __$PreferencesStateSelectedOptionsCopyWithImpl(
+      _PreferencesStateSelectedOptions _value,
+      $Res Function(_PreferencesStateSelectedOptions) _then)
+      : super(_value, (v) => _then(v as _PreferencesStateSelectedOptions));
 
   @override
-  _PreferencesStateInitial get _value =>
-      super._value as _PreferencesStateInitial;
+  _PreferencesStateSelectedOptions get _value =>
+      super._value as _PreferencesStateSelectedOptions;
 
   @override
   $Res call({
     Object? preferences = freezed,
   }) {
-    return _then(_PreferencesStateInitial(
+    return _then(_PreferencesStateSelectedOptions(
       preferences == freezed
           ? _value.preferences
           : preferences // ignore: cast_nullable_to_non_nullable
@@ -137,22 +140,23 @@ class __$PreferencesStateInitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PreferencesStateInitial implements _PreferencesStateInitial {
-  const _$_PreferencesStateInitial(this.preferences);
+class _$_PreferencesStateSelectedOptions
+    implements _PreferencesStateSelectedOptions {
+  const _$_PreferencesStateSelectedOptions(this.preferences);
 
   @override
   final List<String> preferences;
 
   @override
   String toString() {
-    return 'PreferencesState.initial(preferences: $preferences)';
+    return 'PreferencesState.selectedOptions(preferences: $preferences)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PreferencesStateInitial &&
+            other is _PreferencesStateSelectedOptions &&
             const DeepCollectionEquality()
                 .equals(other.preferences, preferences));
   }
@@ -163,34 +167,34 @@ class _$_PreferencesStateInitial implements _PreferencesStateInitial {
 
   @JsonKey(ignore: true)
   @override
-  _$PreferencesStateInitialCopyWith<_PreferencesStateInitial> get copyWith =>
-      __$PreferencesStateInitialCopyWithImpl<_PreferencesStateInitial>(
-          this, _$identity);
+  _$PreferencesStateSelectedOptionsCopyWith<_PreferencesStateSelectedOptions>
+      get copyWith => __$PreferencesStateSelectedOptionsCopyWithImpl<
+          _PreferencesStateSelectedOptions>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> preferences) initial,
+    required TResult Function(List<String> preferences) selectedOptions,
   }) {
-    return initial(preferences);
+    return selectedOptions(preferences);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> preferences)? initial,
+    TResult Function(List<String> preferences)? selectedOptions,
   }) {
-    return initial?.call(preferences);
+    return selectedOptions?.call(preferences);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> preferences)? initial,
+    TResult Function(List<String> preferences)? selectedOptions,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(preferences);
+    if (selectedOptions != null) {
+      return selectedOptions(preferences);
     }
     return orElse();
   }
@@ -198,40 +202,41 @@ class _$_PreferencesStateInitial implements _PreferencesStateInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PreferencesStateInitial value) initial,
+    required TResult Function(_PreferencesStateSelectedOptions value)
+        selectedOptions,
   }) {
-    return initial(this);
+    return selectedOptions(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PreferencesStateInitial value)? initial,
+    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
   }) {
-    return initial?.call(this);
+    return selectedOptions?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PreferencesStateInitial value)? initial,
+    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (selectedOptions != null) {
+      return selectedOptions(this);
     }
     return orElse();
   }
 }
 
-abstract class _PreferencesStateInitial implements PreferencesState {
-  const factory _PreferencesStateInitial(List<String> preferences) =
-      _$_PreferencesStateInitial;
+abstract class _PreferencesStateSelectedOptions implements PreferencesState {
+  const factory _PreferencesStateSelectedOptions(List<String> preferences) =
+      _$_PreferencesStateSelectedOptions;
 
   @override
   List<String> get preferences;
   @override
   @JsonKey(ignore: true)
-  _$PreferencesStateInitialCopyWith<_PreferencesStateInitial> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PreferencesStateSelectedOptionsCopyWith<_PreferencesStateSelectedOptions>
+      get copyWith => throw _privateConstructorUsedError;
 }

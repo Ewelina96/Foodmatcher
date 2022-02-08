@@ -7,32 +7,24 @@ part 'preferences_state.dart';
 
 @injectable
 class PreferencesCubit extends Cubit<PreferencesState> {
-  PreferencesCubit() : super(PreferencesState.initial([]));
-  List<String> preferences = [];
+  PreferencesCubit() : super(PreferencesState.selectedOptions([]));
+  List<String> _preferences = [];
 
-  void changeState(bool value, String property) {
-    if (value == true) {
-      preferences.add(property);
+  void changeState(String property) {
+    if (_preferences.contains(property)) {
+      _preferences.remove(property);
+      emit(PreferencesState.selectedOptions([..._preferences]));
     } else {
-      preferences.remove(property);
+      _preferences.add(property);
+      emit(PreferencesState.selectedOptions([..._preferences]));
+    }
+  }
+
+  bool checkIfOptionIsSelected(String property) {
+    if (_preferences.contains(property)) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
-
-//   bool _checkboxValue(String property) {
-//     return _preferences.contains(property);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     void _navigateToDishes() {
-//       Navigator.push(
-//         context,
-//         MaterialPageRoute(
-//           builder: (context) => Dishes(
-//             preferences: _preferences..add(widget.type),
-//           ),
-//         ),
-//       );
-//     }
-      

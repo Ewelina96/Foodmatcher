@@ -37,7 +37,7 @@ class MealTypePage extends StatelessWidget {
           SizedBox(height: AppDimensions.buttonVerticalPadding),
           ...dishesType.map((dish) {
             final selectedDish = dishTypeToString(dish);
-            return PreferencessButton(
+            return RedirectButton(
               onPressed: () {
                 _navigateToPreferences(selectedDish);
               },
