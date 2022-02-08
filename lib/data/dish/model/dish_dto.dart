@@ -5,11 +5,12 @@ part 'dish_dto.g.dart';
 @JsonSerializable()
 class DishDto {
   final String name;
-  final String thumbnailUrl;
+  @JsonKey(name: 'thumbnail_url')
+  final String? thumbnailUrl;
 
   DishDto({
     required this.name,
-    required this.thumbnailUrl,
+    this.thumbnailUrl,
   });
 
   factory DishDto.fromJson(Map<String, dynamic> json) =>

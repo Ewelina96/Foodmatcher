@@ -1,101 +1,66 @@
-import 'dart:convert';
-import 'package:dietmatcher/models/basic_recipe.dart';
+import 'package:dietmatcher/generated/l10n.dart';
+import 'package:dietmatcher/injection/injection.dart';
+import 'package:dietmatcher/presentation/dishes/dishes_cubit.dart';
+import 'package:dietmatcher/presentation/style/app_dimensions.dart';
 import 'package:flutter/material.dart';
-//import 'package:http/http.dart' as http;
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DishesPage extends StatefulWidget {
-  DishesPage({Key? key, required this.preferences}) : super(key: key);
+class DishesPage extends StatelessWidget {
+  DishesPage({
+    Key? key,
+    required this.preferences,
+  }) : super(key: key);
   final List<String> preferences;
-  @override
-  _DishesPageState createState() => _DishesPageState();
-}
 
-class _DishesPageState extends State<DishesPage> {
-  int _recipeNumber = 0;
-  List<BasicRecipe> _recipes = [];
-  void _increaseRecipeNumber() {
-    setState(() {
-      _recipeNumber++;
-    });
-  }
-
-  void _fetchRecipes() async {
-    dynamic response = await http.get(
-        Uri.https(
-          'tasty.p.rapidapi.com',
-          '/recipes/list',
-          {
-            'tags': widget.preferences.join(","),
-            'from': '0',
-            'size': '20',
-          },
-        ),
-        headers: {
-          "x-rapidapi-host": "tasty.p.rapidapi.com",
-          "x-rapidapi-key": String.fromEnvironment('apiKey'),
-        });
-    if (response.statusCode == 200) {
-      var data = json.decode(response.body);
-      List<BasicRecipe> recipes = data['results'].map<BasicRecipe>((result) {
-        return BasicRecipe.fromJson(result);
-      }).toList();
-      setState(() {
-        _recipes = recipes;
-      });
-    } else {
-      throw Exception('Failed to load album');
-    }
-  }
-
-  @override
-  void initState() {
-    _fetchRecipes();
-    super.initState();
-  }
+  final cubit = getIt<DishesCubit>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            _recipes.length > 0
-                ? Column(children: <Widget>[
-                    Text(
-                      _recipes[_recipeNumber].name,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                    Container(
-                      width: 200.0,
-                      height: 200.0,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                              _recipes[_recipeNumber].thumbnailUrl),
-                        ),
+      body: BlocBuilder<DishesCubit, DishesState>(
+        bloc: cubit
+          ..init(
+            preferences,
+          ),
+        builder: (context, state) => state.maybeMap(
+          orElse: () => Container(),
+          selectedRecipe: (recipeState) => Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Column(children: <Widget>[
+                  Text(
+                    recipeState.dish.name,
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  SizedBox(
+                    height: AppDimensions.dishImagePadding,
+                  ),
+                  Container(
+                    width: AppDimensions.dishImageSize,
+                    height: AppDimensions.dishImageSize,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image:
+                            NetworkImage(recipeState.dish.thumbnailUrl ?? ''),
                       ),
                     ),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                  ])
-                : Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                   ),
-            RaisedButton(
-              onPressed: _recipeNumber + 1 < _recipes.length
-                  ? _increaseRecipeNumber
-                  : null,
-              child: Text('Next'),
-            )
-          ],
+                  SizedBox(
+                    height: AppDimensions.dishImagePadding,
+                  ),
+                ]),
+                ElevatedButton(
+                  onPressed: recipeState.hasNextRecipe == true
+                      ? cubit.nextRecipe
+                      : null,
+                  child: Text(S.of(context).next),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );

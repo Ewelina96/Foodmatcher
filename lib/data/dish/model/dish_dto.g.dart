@@ -8,10 +8,10 @@ part of 'dish_dto.dart';
 
 DishDto _$DishDtoFromJson(Map<String, dynamic> json) => DishDto(
       name: json['name'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String,
+      thumbnailUrl: json['thumbnail_url'] as String?,
     );
 
 Map<String, dynamic> _$DishDtoToJson(DishDto instance) => <String, dynamic>{
       'name': instance.name,
-      'thumbnailUrl': instance.thumbnailUrl,
+      'thumbnail_url': instance.thumbnailUrl,
     };

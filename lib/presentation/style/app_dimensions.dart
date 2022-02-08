@@ -7,4 +7,7 @@ class AppDimensions {
   static const buttonVerticalPadding = 24.0;
 
   static const standardBorderRadius = 24.0;
+
+  static const dishImageSize = 200.0;
+  static const dishImagePadding = 16.0;
 }
