@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dietmatcher/generated/l10n.dart';
 import 'package:dietmatcher/injection/injection.dart';
 import 'package:dietmatcher/presentation/dishes/dishes_cubit.dart';
@@ -5,6 +6,7 @@ import 'package:dietmatcher/presentation/style/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class DishesPage extends StatelessWidget {
   DishesPage({
     Key? key,

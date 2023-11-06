@@ -21,7 +21,6 @@ abstract class DishRemoteDataSource {
 
 @freezed
 class GetDishesResponse with _$GetDishesResponse {
-  @JsonSerializable(includeIfNull: false)
   factory GetDishesResponse({
     required int count,
     required List<DishDto> results,

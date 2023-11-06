@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dishes_cubit.dart';
 
@@ -12,26 +12,7 @@ part of 'dishes_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DishesStateTearOff {
-  const _$DishesStateTearOff();
-
-  _DishesStateLoading loading() {
-    return const _DishesStateLoading();
-  }
-
-  _DishesStateSelectedRecipe selectedRecipe(DishDto dish, bool hasNextRecipe) {
-    return _DishesStateSelectedRecipe(
-      dish,
-      hasNextRecipe,
-    );
-  }
-}
-
-/// @nodoc
-const $DishesState = _$DishesStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DishesState {
@@ -43,8 +24,8 @@ mixin _$DishesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
+    TResult? Function()? loading,
+    TResult? Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,8 +43,8 @@ mixin _$DishesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DishesStateLoading value)? loading,
-    TResult Function(_DishesStateSelectedRecipe value)? selectedRecipe,
+    TResult? Function(_DishesStateLoading value)? loading,
+    TResult? Function(_DishesStateSelectedRecipe value)? selectedRecipe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,41 +60,40 @@ mixin _$DishesState {
 abstract class $DishesStateCopyWith<$Res> {
   factory $DishesStateCopyWith(
           DishesState value, $Res Function(DishesState) then) =
-      _$DishesStateCopyWithImpl<$Res>;
+      _$DishesStateCopyWithImpl<$Res, DishesState>;
 }
 
 /// @nodoc
-class _$DishesStateCopyWithImpl<$Res> implements $DishesStateCopyWith<$Res> {
+class _$DishesStateCopyWithImpl<$Res, $Val extends DishesState>
+    implements $DishesStateCopyWith<$Res> {
   _$DishesStateCopyWithImpl(this._value, this._then);
 
-  final DishesState _value;
   // ignore: unused_field
-  final $Res Function(DishesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$DishesStateLoadingCopyWith<$Res> {
-  factory _$DishesStateLoadingCopyWith(
-          _DishesStateLoading value, $Res Function(_DishesStateLoading) then) =
-      __$DishesStateLoadingCopyWithImpl<$Res>;
+abstract class _$$DishesStateLoadingImplCopyWith<$Res> {
+  factory _$$DishesStateLoadingImplCopyWith(_$DishesStateLoadingImpl value,
+          $Res Function(_$DishesStateLoadingImpl) then) =
+      __$$DishesStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DishesStateLoadingCopyWithImpl<$Res>
-    extends _$DishesStateCopyWithImpl<$Res>
-    implements _$DishesStateLoadingCopyWith<$Res> {
-  __$DishesStateLoadingCopyWithImpl(
-      _DishesStateLoading _value, $Res Function(_DishesStateLoading) _then)
-      : super(_value, (v) => _then(v as _DishesStateLoading));
-
-  @override
-  _DishesStateLoading get _value => super._value as _DishesStateLoading;
+class __$$DishesStateLoadingImplCopyWithImpl<$Res>
+    extends _$DishesStateCopyWithImpl<$Res, _$DishesStateLoadingImpl>
+    implements _$$DishesStateLoadingImplCopyWith<$Res> {
+  __$$DishesStateLoadingImplCopyWithImpl(_$DishesStateLoadingImpl _value,
+      $Res Function(_$DishesStateLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DishesStateLoading implements _DishesStateLoading {
-  const _$_DishesStateLoading();
+class _$DishesStateLoadingImpl implements _DishesStateLoading {
+  const _$DishesStateLoadingImpl();
 
   @override
   String toString() {
@@ -123,7 +103,7 @@ class _$_DishesStateLoading implements _DishesStateLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DishesStateLoading);
+        (other.runtimeType == runtimeType && other is _$DishesStateLoadingImpl);
   }
 
   @override
@@ -141,8 +121,8 @@ class _$_DishesStateLoading implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
+    TResult? Function()? loading,
+    TResult? Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
   }) {
     return loading?.call();
   }
@@ -172,8 +152,8 @@ class _$_DishesStateLoading implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DishesStateLoading value)? loading,
-    TResult Function(_DishesStateSelectedRecipe value)? selectedRecipe,
+    TResult? Function(_DishesStateLoading value)? loading,
+    TResult? Function(_DishesStateSelectedRecipe value)? selectedRecipe,
   }) {
     return loading?.call(this);
   }
@@ -193,40 +173,40 @@ class _$_DishesStateLoading implements _DishesStateLoading {
 }
 
 abstract class _DishesStateLoading implements DishesState {
-  const factory _DishesStateLoading() = _$_DishesStateLoading;
+  const factory _DishesStateLoading() = _$DishesStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$DishesStateSelectedRecipeCopyWith<$Res> {
-  factory _$DishesStateSelectedRecipeCopyWith(_DishesStateSelectedRecipe value,
-          $Res Function(_DishesStateSelectedRecipe) then) =
-      __$DishesStateSelectedRecipeCopyWithImpl<$Res>;
+abstract class _$$DishesStateSelectedRecipeImplCopyWith<$Res> {
+  factory _$$DishesStateSelectedRecipeImplCopyWith(
+          _$DishesStateSelectedRecipeImpl value,
+          $Res Function(_$DishesStateSelectedRecipeImpl) then) =
+      __$$DishesStateSelectedRecipeImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({DishDto dish, bool hasNextRecipe});
 }
 
 /// @nodoc
-class __$DishesStateSelectedRecipeCopyWithImpl<$Res>
-    extends _$DishesStateCopyWithImpl<$Res>
-    implements _$DishesStateSelectedRecipeCopyWith<$Res> {
-  __$DishesStateSelectedRecipeCopyWithImpl(_DishesStateSelectedRecipe _value,
-      $Res Function(_DishesStateSelectedRecipe) _then)
-      : super(_value, (v) => _then(v as _DishesStateSelectedRecipe));
+class __$$DishesStateSelectedRecipeImplCopyWithImpl<$Res>
+    extends _$DishesStateCopyWithImpl<$Res, _$DishesStateSelectedRecipeImpl>
+    implements _$$DishesStateSelectedRecipeImplCopyWith<$Res> {
+  __$$DishesStateSelectedRecipeImplCopyWithImpl(
+      _$DishesStateSelectedRecipeImpl _value,
+      $Res Function(_$DishesStateSelectedRecipeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _DishesStateSelectedRecipe get _value =>
-      super._value as _DishesStateSelectedRecipe;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dish = freezed,
-    Object? hasNextRecipe = freezed,
+    Object? dish = null,
+    Object? hasNextRecipe = null,
   }) {
-    return _then(_DishesStateSelectedRecipe(
-      dish == freezed
+    return _then(_$DishesStateSelectedRecipeImpl(
+      null == dish
           ? _value.dish
           : dish // ignore: cast_nullable_to_non_nullable
               as DishDto,
-      hasNextRecipe == freezed
+      null == hasNextRecipe
           ? _value.hasNextRecipe
           : hasNextRecipe // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -236,8 +216,8 @@ class __$DishesStateSelectedRecipeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DishesStateSelectedRecipe implements _DishesStateSelectedRecipe {
-  const _$_DishesStateSelectedRecipe(this.dish, this.hasNextRecipe);
+class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
+  const _$DishesStateSelectedRecipeImpl(this.dish, this.hasNextRecipe);
 
   @override
   final DishDto dish;
@@ -253,24 +233,21 @@ class _$_DishesStateSelectedRecipe implements _DishesStateSelectedRecipe {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DishesStateSelectedRecipe &&
-            const DeepCollectionEquality().equals(other.dish, dish) &&
-            const DeepCollectionEquality()
-                .equals(other.hasNextRecipe, hasNextRecipe));
+            other is _$DishesStateSelectedRecipeImpl &&
+            (identical(other.dish, dish) || other.dish == dish) &&
+            (identical(other.hasNextRecipe, hasNextRecipe) ||
+                other.hasNextRecipe == hasNextRecipe));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(dish),
-      const DeepCollectionEquality().hash(hasNextRecipe));
+  int get hashCode => Object.hash(runtimeType, dish, hasNextRecipe);
 
   @JsonKey(ignore: true)
   @override
-  _$DishesStateSelectedRecipeCopyWith<_DishesStateSelectedRecipe>
-      get copyWith =>
-          __$DishesStateSelectedRecipeCopyWithImpl<_DishesStateSelectedRecipe>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DishesStateSelectedRecipeImplCopyWith<_$DishesStateSelectedRecipeImpl>
+      get copyWith => __$$DishesStateSelectedRecipeImplCopyWithImpl<
+          _$DishesStateSelectedRecipeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -284,8 +261,8 @@ class _$_DishesStateSelectedRecipe implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
+    TResult? Function()? loading,
+    TResult? Function(DishDto dish, bool hasNextRecipe)? selectedRecipe,
   }) {
     return selectedRecipe?.call(dish, hasNextRecipe);
   }
@@ -315,8 +292,8 @@ class _$_DishesStateSelectedRecipe implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DishesStateLoading value)? loading,
-    TResult Function(_DishesStateSelectedRecipe value)? selectedRecipe,
+    TResult? Function(_DishesStateLoading value)? loading,
+    TResult? Function(_DishesStateSelectedRecipe value)? selectedRecipe,
   }) {
     return selectedRecipe?.call(this);
   }
@@ -336,12 +313,13 @@ class _$_DishesStateSelectedRecipe implements _DishesStateSelectedRecipe {
 }
 
 abstract class _DishesStateSelectedRecipe implements DishesState {
-  const factory _DishesStateSelectedRecipe(DishDto dish, bool hasNextRecipe) =
-      _$_DishesStateSelectedRecipe;
+  const factory _DishesStateSelectedRecipe(
+          final DishDto dish, final bool hasNextRecipe) =
+      _$DishesStateSelectedRecipeImpl;
 
   DishDto get dish;
   bool get hasNextRecipe;
   @JsonKey(ignore: true)
-  _$DishesStateSelectedRecipeCopyWith<_DishesStateSelectedRecipe>
+  _$$DishesStateSelectedRecipeImplCopyWith<_$DishesStateSelectedRecipeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

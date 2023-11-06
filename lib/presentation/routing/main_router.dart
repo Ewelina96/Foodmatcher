@@ -1,11 +1,18 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dietmatcher/presentation/dishes/dishes_page.dart';
-import 'package:dietmatcher/presentation/meal_type/meal_type_page.dart';
-import 'package:dietmatcher/presentation/preferences/preferences_page.dart';
+import 'package:dietmatcher/presentation/routing/main_router.gr.dart';
 
-@AdaptiveAutoRouter(routes: <AutoRoute>[
-  AutoRoute(page: MealTypePage, initial: true),
-  AutoRoute(page: PreferencesPage),
-  AutoRoute(page: DishesPage),
-])
-class $MainRouter {}
+@AutoRouterConfig()
+class AppRouter extends $AppRouter {
+  @override
+  RouteType get defaultRouteType => RouteType.material();
+
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(
+          page: MealTypeRoute.page,
+          initial: true,
+        ),
+        AutoRoute(page: DishesRoute.page),
+        AutoRoute(page: PreferencesRoute.page)
+      ];
+}

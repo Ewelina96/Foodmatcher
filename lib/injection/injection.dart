@@ -7,7 +7,7 @@ final GetIt getIt = GetIt.instance;
 
 @injectableInit
 void configureInjection(String environment) =>
-    $initGetIt(getIt, environment: environment);
+    GetIt.I.init(environment: environment);
 
 abstract class Env {
   static const dev = 'dev';

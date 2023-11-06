@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dish_repository_response.dart';
 
@@ -12,27 +12,7 @@ part of 'dish_repository_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DishRepositoryResponseTearOff {
-  const _$DishRepositoryResponseTearOff();
-
-  DishRepositoryResponseSuccess success(List<DishDto> dishes) {
-    return DishRepositoryResponseSuccess(
-      dishes,
-    );
-  }
-
-  DishRepositoryResponseFailure failure(String errorMessage) {
-    return DishRepositoryResponseFailure(
-      errorMessage,
-    );
-  }
-}
-
-/// @nodoc
-const $DishRepositoryResponse = _$DishRepositoryResponseTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DishRepositoryResponse {
@@ -44,8 +24,8 @@ mixin _$DishRepositoryResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
-    TResult Function(String errorMessage)? failure,
+    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(String errorMessage)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,8 +43,8 @@ mixin _$DishRepositoryResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DishRepositoryResponseSuccess value)? success,
-    TResult Function(DishRepositoryResponseFailure value)? failure,
+    TResult? Function(DishRepositoryResponseSuccess value)? success,
+    TResult? Function(DishRepositoryResponseFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,48 +60,49 @@ mixin _$DishRepositoryResponse {
 abstract class $DishRepositoryResponseCopyWith<$Res> {
   factory $DishRepositoryResponseCopyWith(DishRepositoryResponse value,
           $Res Function(DishRepositoryResponse) then) =
-      _$DishRepositoryResponseCopyWithImpl<$Res>;
+      _$DishRepositoryResponseCopyWithImpl<$Res, DishRepositoryResponse>;
 }
 
 /// @nodoc
-class _$DishRepositoryResponseCopyWithImpl<$Res>
+class _$DishRepositoryResponseCopyWithImpl<$Res,
+        $Val extends DishRepositoryResponse>
     implements $DishRepositoryResponseCopyWith<$Res> {
   _$DishRepositoryResponseCopyWithImpl(this._value, this._then);
 
-  final DishRepositoryResponse _value;
   // ignore: unused_field
-  final $Res Function(DishRepositoryResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $DishRepositoryResponseSuccessCopyWith<$Res> {
-  factory $DishRepositoryResponseSuccessCopyWith(
-          DishRepositoryResponseSuccess value,
-          $Res Function(DishRepositoryResponseSuccess) then) =
-      _$DishRepositoryResponseSuccessCopyWithImpl<$Res>;
+abstract class _$$DishRepositoryResponseSuccessImplCopyWith<$Res> {
+  factory _$$DishRepositoryResponseSuccessImplCopyWith(
+          _$DishRepositoryResponseSuccessImpl value,
+          $Res Function(_$DishRepositoryResponseSuccessImpl) then) =
+      __$$DishRepositoryResponseSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<DishDto> dishes});
 }
 
 /// @nodoc
-class _$DishRepositoryResponseSuccessCopyWithImpl<$Res>
-    extends _$DishRepositoryResponseCopyWithImpl<$Res>
-    implements $DishRepositoryResponseSuccessCopyWith<$Res> {
-  _$DishRepositoryResponseSuccessCopyWithImpl(
-      DishRepositoryResponseSuccess _value,
-      $Res Function(DishRepositoryResponseSuccess) _then)
-      : super(_value, (v) => _then(v as DishRepositoryResponseSuccess));
+class __$$DishRepositoryResponseSuccessImplCopyWithImpl<$Res>
+    extends _$DishRepositoryResponseCopyWithImpl<$Res,
+        _$DishRepositoryResponseSuccessImpl>
+    implements _$$DishRepositoryResponseSuccessImplCopyWith<$Res> {
+  __$$DishRepositoryResponseSuccessImplCopyWithImpl(
+      _$DishRepositoryResponseSuccessImpl _value,
+      $Res Function(_$DishRepositoryResponseSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  DishRepositoryResponseSuccess get _value =>
-      super._value as DishRepositoryResponseSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dishes = freezed,
+    Object? dishes = null,
   }) {
-    return _then(DishRepositoryResponseSuccess(
-      dishes == freezed
-          ? _value.dishes
+    return _then(_$DishRepositoryResponseSuccessImpl(
+      null == dishes
+          ? _value._dishes
           : dishes // ignore: cast_nullable_to_non_nullable
               as List<DishDto>,
     ));
@@ -130,11 +111,18 @@ class _$DishRepositoryResponseSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DishRepositoryResponseSuccess implements DishRepositoryResponseSuccess {
-  const _$DishRepositoryResponseSuccess(this.dishes);
+class _$DishRepositoryResponseSuccessImpl
+    implements DishRepositoryResponseSuccess {
+  const _$DishRepositoryResponseSuccessImpl(final List<DishDto> dishes)
+      : _dishes = dishes;
 
+  final List<DishDto> _dishes;
   @override
-  final List<DishDto> dishes;
+  List<DishDto> get dishes {
+    if (_dishes is EqualUnmodifiableListView) return _dishes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dishes);
+  }
 
   @override
   String toString() {
@@ -145,19 +133,21 @@ class _$DishRepositoryResponseSuccess implements DishRepositoryResponseSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DishRepositoryResponseSuccess &&
-            const DeepCollectionEquality().equals(other.dishes, dishes));
+            other is _$DishRepositoryResponseSuccessImpl &&
+            const DeepCollectionEquality().equals(other._dishes, _dishes));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(dishes));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_dishes));
 
   @JsonKey(ignore: true)
   @override
-  $DishRepositoryResponseSuccessCopyWith<DishRepositoryResponseSuccess>
-      get copyWith => _$DishRepositoryResponseSuccessCopyWithImpl<
-          DishRepositoryResponseSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DishRepositoryResponseSuccessImplCopyWith<
+          _$DishRepositoryResponseSuccessImpl>
+      get copyWith => __$$DishRepositoryResponseSuccessImplCopyWithImpl<
+          _$DishRepositoryResponseSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -171,8 +161,8 @@ class _$DishRepositoryResponseSuccess implements DishRepositoryResponseSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
-    TResult Function(String errorMessage)? failure,
+    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
     return success?.call(dishes);
   }
@@ -202,8 +192,8 @@ class _$DishRepositoryResponseSuccess implements DishRepositoryResponseSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DishRepositoryResponseSuccess value)? success,
-    TResult Function(DishRepositoryResponseFailure value)? failure,
+    TResult? Function(DishRepositoryResponseSuccess value)? success,
+    TResult? Function(DishRepositoryResponseFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -223,43 +213,43 @@ class _$DishRepositoryResponseSuccess implements DishRepositoryResponseSuccess {
 }
 
 abstract class DishRepositoryResponseSuccess implements DishRepositoryResponse {
-  const factory DishRepositoryResponseSuccess(List<DishDto> dishes) =
-      _$DishRepositoryResponseSuccess;
+  const factory DishRepositoryResponseSuccess(final List<DishDto> dishes) =
+      _$DishRepositoryResponseSuccessImpl;
 
   List<DishDto> get dishes;
   @JsonKey(ignore: true)
-  $DishRepositoryResponseSuccessCopyWith<DishRepositoryResponseSuccess>
+  _$$DishRepositoryResponseSuccessImplCopyWith<
+          _$DishRepositoryResponseSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DishRepositoryResponseFailureCopyWith<$Res> {
-  factory $DishRepositoryResponseFailureCopyWith(
-          DishRepositoryResponseFailure value,
-          $Res Function(DishRepositoryResponseFailure) then) =
-      _$DishRepositoryResponseFailureCopyWithImpl<$Res>;
+abstract class _$$DishRepositoryResponseFailureImplCopyWith<$Res> {
+  factory _$$DishRepositoryResponseFailureImplCopyWith(
+          _$DishRepositoryResponseFailureImpl value,
+          $Res Function(_$DishRepositoryResponseFailureImpl) then) =
+      __$$DishRepositoryResponseFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String errorMessage});
 }
 
 /// @nodoc
-class _$DishRepositoryResponseFailureCopyWithImpl<$Res>
-    extends _$DishRepositoryResponseCopyWithImpl<$Res>
-    implements $DishRepositoryResponseFailureCopyWith<$Res> {
-  _$DishRepositoryResponseFailureCopyWithImpl(
-      DishRepositoryResponseFailure _value,
-      $Res Function(DishRepositoryResponseFailure) _then)
-      : super(_value, (v) => _then(v as DishRepositoryResponseFailure));
+class __$$DishRepositoryResponseFailureImplCopyWithImpl<$Res>
+    extends _$DishRepositoryResponseCopyWithImpl<$Res,
+        _$DishRepositoryResponseFailureImpl>
+    implements _$$DishRepositoryResponseFailureImplCopyWith<$Res> {
+  __$$DishRepositoryResponseFailureImplCopyWithImpl(
+      _$DishRepositoryResponseFailureImpl _value,
+      $Res Function(_$DishRepositoryResponseFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  DishRepositoryResponseFailure get _value =>
-      super._value as DishRepositoryResponseFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorMessage = freezed,
+    Object? errorMessage = null,
   }) {
-    return _then(DishRepositoryResponseFailure(
-      errorMessage == freezed
+    return _then(_$DishRepositoryResponseFailureImpl(
+      null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
@@ -269,8 +259,9 @@ class _$DishRepositoryResponseFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DishRepositoryResponseFailure implements DishRepositoryResponseFailure {
-  const _$DishRepositoryResponseFailure(this.errorMessage);
+class _$DishRepositoryResponseFailureImpl
+    implements DishRepositoryResponseFailure {
+  const _$DishRepositoryResponseFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
@@ -284,20 +275,21 @@ class _$DishRepositoryResponseFailure implements DishRepositoryResponseFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DishRepositoryResponseFailure &&
-            const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+            other is _$DishRepositoryResponseFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+  int get hashCode => Object.hash(runtimeType, errorMessage);
 
   @JsonKey(ignore: true)
   @override
-  $DishRepositoryResponseFailureCopyWith<DishRepositoryResponseFailure>
-      get copyWith => _$DishRepositoryResponseFailureCopyWithImpl<
-          DishRepositoryResponseFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DishRepositoryResponseFailureImplCopyWith<
+          _$DishRepositoryResponseFailureImpl>
+      get copyWith => __$$DishRepositoryResponseFailureImplCopyWithImpl<
+          _$DishRepositoryResponseFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -311,8 +303,8 @@ class _$DishRepositoryResponseFailure implements DishRepositoryResponseFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
-    TResult Function(String errorMessage)? failure,
+    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(String errorMessage)? failure,
   }) {
     return failure?.call(errorMessage);
   }
@@ -342,8 +334,8 @@ class _$DishRepositoryResponseFailure implements DishRepositoryResponseFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DishRepositoryResponseSuccess value)? success,
-    TResult Function(DishRepositoryResponseFailure value)? failure,
+    TResult? Function(DishRepositoryResponseSuccess value)? success,
+    TResult? Function(DishRepositoryResponseFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -363,11 +355,12 @@ class _$DishRepositoryResponseFailure implements DishRepositoryResponseFailure {
 }
 
 abstract class DishRepositoryResponseFailure implements DishRepositoryResponse {
-  const factory DishRepositoryResponseFailure(String errorMessage) =
-      _$DishRepositoryResponseFailure;
+  const factory DishRepositoryResponseFailure(final String errorMessage) =
+      _$DishRepositoryResponseFailureImpl;
 
   String get errorMessage;
   @JsonKey(ignore: true)
-  $DishRepositoryResponseFailureCopyWith<DishRepositoryResponseFailure>
+  _$$DishRepositoryResponseFailureImplCopyWith<
+          _$DishRepositoryResponseFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,14 +6,16 @@ part of 'dish_search_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DishSearchParams _$$_DishSearchParamsFromJson(Map<String, dynamic> json) =>
-    _$_DishSearchParams(
+_$DishSearchParamsImpl _$$DishSearchParamsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DishSearchParamsImpl(
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       from: json['from'] as String?,
       to: json['to'] as String?,
     );
 
-Map<String, dynamic> _$$_DishSearchParamsToJson(_$_DishSearchParams instance) {
+Map<String, dynamic> _$$DishSearchParamsImplToJson(
+    _$DishSearchParamsImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

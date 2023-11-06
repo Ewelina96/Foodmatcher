@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dish_remote_data_source.dart';
 
@@ -12,31 +12,11 @@ part of 'dish_remote_data_source.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 GetDishesResponse _$GetDishesResponseFromJson(Map<String, dynamic> json) {
   return _GetDishesResponse.fromJson(json);
 }
-
-/// @nodoc
-class _$GetDishesResponseTearOff {
-  const _$GetDishesResponseTearOff();
-
-  _GetDishesResponse call(
-      {required int count, required List<DishDto> results}) {
-    return _GetDishesResponse(
-      count: count,
-      results: results,
-    );
-  }
-
-  GetDishesResponse fromJson(Map<String, Object?> json) {
-    return GetDishesResponse.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GetDishesResponse = _$GetDishesResponseTearOff();
 
 /// @nodoc
 mixin _$GetDishesResponse {
@@ -53,70 +33,72 @@ mixin _$GetDishesResponse {
 abstract class $GetDishesResponseCopyWith<$Res> {
   factory $GetDishesResponseCopyWith(
           GetDishesResponse value, $Res Function(GetDishesResponse) then) =
-      _$GetDishesResponseCopyWithImpl<$Res>;
+      _$GetDishesResponseCopyWithImpl<$Res, GetDishesResponse>;
+  @useResult
   $Res call({int count, List<DishDto> results});
 }
 
 /// @nodoc
-class _$GetDishesResponseCopyWithImpl<$Res>
+class _$GetDishesResponseCopyWithImpl<$Res, $Val extends GetDishesResponse>
     implements $GetDishesResponseCopyWith<$Res> {
   _$GetDishesResponseCopyWithImpl(this._value, this._then);
 
-  final GetDishesResponse _value;
   // ignore: unused_field
-  final $Res Function(GetDishesResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = freezed,
-    Object? results = freezed,
+    Object? count = null,
+    Object? results = null,
   }) {
     return _then(_value.copyWith(
-      count: count == freezed
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      results: results == freezed
+      results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<DishDto>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$GetDishesResponseCopyWith<$Res>
+abstract class _$$GetDishesResponseImplCopyWith<$Res>
     implements $GetDishesResponseCopyWith<$Res> {
-  factory _$GetDishesResponseCopyWith(
-          _GetDishesResponse value, $Res Function(_GetDishesResponse) then) =
-      __$GetDishesResponseCopyWithImpl<$Res>;
+  factory _$$GetDishesResponseImplCopyWith(_$GetDishesResponseImpl value,
+          $Res Function(_$GetDishesResponseImpl) then) =
+      __$$GetDishesResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int count, List<DishDto> results});
 }
 
 /// @nodoc
-class __$GetDishesResponseCopyWithImpl<$Res>
-    extends _$GetDishesResponseCopyWithImpl<$Res>
-    implements _$GetDishesResponseCopyWith<$Res> {
-  __$GetDishesResponseCopyWithImpl(
-      _GetDishesResponse _value, $Res Function(_GetDishesResponse) _then)
-      : super(_value, (v) => _then(v as _GetDishesResponse));
+class __$$GetDishesResponseImplCopyWithImpl<$Res>
+    extends _$GetDishesResponseCopyWithImpl<$Res, _$GetDishesResponseImpl>
+    implements _$$GetDishesResponseImplCopyWith<$Res> {
+  __$$GetDishesResponseImplCopyWithImpl(_$GetDishesResponseImpl _value,
+      $Res Function(_$GetDishesResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _GetDishesResponse get _value => super._value as _GetDishesResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = freezed,
-    Object? results = freezed,
+    Object? count = null,
+    Object? results = null,
   }) {
-    return _then(_GetDishesResponse(
-      count: count == freezed
+    return _then(_$GetDishesResponseImpl(
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      results: results == freezed
-          ? _value.results
+      results: null == results
+          ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
               as List<DishDto>,
     ));
@@ -124,18 +106,24 @@ class __$GetDishesResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
+@JsonSerializable()
+class _$GetDishesResponseImpl implements _GetDishesResponse {
+  _$GetDishesResponseImpl(
+      {required this.count, required final List<DishDto> results})
+      : _results = results;
 
-@JsonSerializable(includeIfNull: false)
-class _$_GetDishesResponse implements _GetDishesResponse {
-  _$_GetDishesResponse({required this.count, required this.results});
-
-  factory _$_GetDishesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_GetDishesResponseFromJson(json);
+  factory _$GetDishesResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetDishesResponseImplFromJson(json);
 
   @override
   final int count;
+  final List<DishDto> _results;
   @override
-  final List<DishDto> results;
+  List<DishDto> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_results);
+  }
 
   @override
   String toString() {
@@ -146,35 +134,38 @@ class _$_GetDishesResponse implements _GetDishesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetDishesResponse &&
-            const DeepCollectionEquality().equals(other.count, count) &&
-            const DeepCollectionEquality().equals(other.results, results));
+            other is _$GetDishesResponseImpl &&
+            (identical(other.count, count) || other.count == count) &&
+            const DeepCollectionEquality().equals(other._results, _results));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(count),
-      const DeepCollectionEquality().hash(results));
 
   @JsonKey(ignore: true)
   @override
-  _$GetDishesResponseCopyWith<_GetDishesResponse> get copyWith =>
-      __$GetDishesResponseCopyWithImpl<_GetDishesResponse>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, count, const DeepCollectionEquality().hash(_results));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDishesResponseImplCopyWith<_$GetDishesResponseImpl> get copyWith =>
+      __$$GetDishesResponseImplCopyWithImpl<_$GetDishesResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetDishesResponseToJson(this);
+    return _$$GetDishesResponseImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _GetDishesResponse implements GetDishesResponse {
   factory _GetDishesResponse(
-      {required int count,
-      required List<DishDto> results}) = _$_GetDishesResponse;
+      {required final int count,
+      required final List<DishDto> results}) = _$GetDishesResponseImpl;
 
   factory _GetDishesResponse.fromJson(Map<String, dynamic> json) =
-      _$_GetDishesResponse.fromJson;
+      _$GetDishesResponseImpl.fromJson;
 
   @override
   int get count;
@@ -182,6 +173,6 @@ abstract class _GetDishesResponse implements GetDishesResponse {
   List<DishDto> get results;
   @override
   @JsonKey(ignore: true)
-  _$GetDishesResponseCopyWith<_GetDishesResponse> get copyWith =>
+  _$$GetDishesResponseImplCopyWith<_$GetDishesResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

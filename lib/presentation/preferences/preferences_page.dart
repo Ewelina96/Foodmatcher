@@ -8,6 +8,7 @@ import 'package:dietmatcher/utils/functions/dish_option_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class PreferencesPage extends StatelessWidget {
   PreferencesPage({Key? key, required this.type}) : super(key: key);
   final String type;
@@ -30,7 +31,7 @@ class PreferencesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           S.of(context).preferences,
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
       body: BlocBuilder<PreferencesCubit, PreferencesState>(
@@ -53,7 +54,7 @@ class PreferencesPage extends StatelessWidget {
               RedirectButton(
                 onPressed: () {
                   AutoRouter.of(context)
-                      .push(DishesPageRoute(preferences: state.preferences));
+                      .push(DishesRoute(preferences: state.preferences));
                 },
                 text: S.of(context).apply,
               ),

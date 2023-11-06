@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'preferences_cubit.dart';
 
@@ -12,26 +12,11 @@ part of 'preferences_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PreferencesStateTearOff {
-  const _$PreferencesStateTearOff();
-
-  _PreferencesStateSelectedOptions selectedOptions(List<String> preferences) {
-    return _PreferencesStateSelectedOptions(
-      preferences,
-    );
-  }
-}
-
-/// @nodoc
-const $PreferencesState = _$PreferencesStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PreferencesState {
   List<String> get preferences => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> preferences) selectedOptions,
@@ -39,7 +24,7 @@ mixin _$PreferencesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> preferences)? selectedOptions,
+    TResult? Function(List<String> preferences)? selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +41,7 @@ mixin _$PreferencesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
+    TResult? Function(_PreferencesStateSelectedOptions value)? selectedOptions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,63 +60,65 @@ mixin _$PreferencesState {
 abstract class $PreferencesStateCopyWith<$Res> {
   factory $PreferencesStateCopyWith(
           PreferencesState value, $Res Function(PreferencesState) then) =
-      _$PreferencesStateCopyWithImpl<$Res>;
+      _$PreferencesStateCopyWithImpl<$Res, PreferencesState>;
+  @useResult
   $Res call({List<String> preferences});
 }
 
 /// @nodoc
-class _$PreferencesStateCopyWithImpl<$Res>
+class _$PreferencesStateCopyWithImpl<$Res, $Val extends PreferencesState>
     implements $PreferencesStateCopyWith<$Res> {
   _$PreferencesStateCopyWithImpl(this._value, this._then);
 
-  final PreferencesState _value;
   // ignore: unused_field
-  final $Res Function(PreferencesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? preferences = freezed,
+    Object? preferences = null,
   }) {
     return _then(_value.copyWith(
-      preferences: preferences == freezed
+      preferences: null == preferences
           ? _value.preferences
           : preferences // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PreferencesStateSelectedOptionsCopyWith<$Res>
+abstract class _$$PreferencesStateSelectedOptionsImplCopyWith<$Res>
     implements $PreferencesStateCopyWith<$Res> {
-  factory _$PreferencesStateSelectedOptionsCopyWith(
-          _PreferencesStateSelectedOptions value,
-          $Res Function(_PreferencesStateSelectedOptions) then) =
-      __$PreferencesStateSelectedOptionsCopyWithImpl<$Res>;
+  factory _$$PreferencesStateSelectedOptionsImplCopyWith(
+          _$PreferencesStateSelectedOptionsImpl value,
+          $Res Function(_$PreferencesStateSelectedOptionsImpl) then) =
+      __$$PreferencesStateSelectedOptionsImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<String> preferences});
 }
 
 /// @nodoc
-class __$PreferencesStateSelectedOptionsCopyWithImpl<$Res>
-    extends _$PreferencesStateCopyWithImpl<$Res>
-    implements _$PreferencesStateSelectedOptionsCopyWith<$Res> {
-  __$PreferencesStateSelectedOptionsCopyWithImpl(
-      _PreferencesStateSelectedOptions _value,
-      $Res Function(_PreferencesStateSelectedOptions) _then)
-      : super(_value, (v) => _then(v as _PreferencesStateSelectedOptions));
+class __$$PreferencesStateSelectedOptionsImplCopyWithImpl<$Res>
+    extends _$PreferencesStateCopyWithImpl<$Res,
+        _$PreferencesStateSelectedOptionsImpl>
+    implements _$$PreferencesStateSelectedOptionsImplCopyWith<$Res> {
+  __$$PreferencesStateSelectedOptionsImplCopyWithImpl(
+      _$PreferencesStateSelectedOptionsImpl _value,
+      $Res Function(_$PreferencesStateSelectedOptionsImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _PreferencesStateSelectedOptions get _value =>
-      super._value as _PreferencesStateSelectedOptions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? preferences = freezed,
+    Object? preferences = null,
   }) {
-    return _then(_PreferencesStateSelectedOptions(
-      preferences == freezed
-          ? _value.preferences
+    return _then(_$PreferencesStateSelectedOptionsImpl(
+      null == preferences
+          ? _value._preferences
           : preferences // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -140,12 +127,18 @@ class __$PreferencesStateSelectedOptionsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PreferencesStateSelectedOptions
+class _$PreferencesStateSelectedOptionsImpl
     implements _PreferencesStateSelectedOptions {
-  const _$_PreferencesStateSelectedOptions(this.preferences);
+  const _$PreferencesStateSelectedOptionsImpl(final List<String> preferences)
+      : _preferences = preferences;
 
+  final List<String> _preferences;
   @override
-  final List<String> preferences;
+  List<String> get preferences {
+    if (_preferences is EqualUnmodifiableListView) return _preferences;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_preferences);
+  }
 
   @override
   String toString() {
@@ -156,20 +149,22 @@ class _$_PreferencesStateSelectedOptions
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PreferencesStateSelectedOptions &&
+            other is _$PreferencesStateSelectedOptionsImpl &&
             const DeepCollectionEquality()
-                .equals(other.preferences, preferences));
+                .equals(other._preferences, _preferences));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(preferences));
+      runtimeType, const DeepCollectionEquality().hash(_preferences));
 
   @JsonKey(ignore: true)
   @override
-  _$PreferencesStateSelectedOptionsCopyWith<_PreferencesStateSelectedOptions>
-      get copyWith => __$PreferencesStateSelectedOptionsCopyWithImpl<
-          _PreferencesStateSelectedOptions>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PreferencesStateSelectedOptionsImplCopyWith<
+          _$PreferencesStateSelectedOptionsImpl>
+      get copyWith => __$$PreferencesStateSelectedOptionsImplCopyWithImpl<
+          _$PreferencesStateSelectedOptionsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,7 +177,7 @@ class _$_PreferencesStateSelectedOptions
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> preferences)? selectedOptions,
+    TResult? Function(List<String> preferences)? selectedOptions,
   }) {
     return selectedOptions?.call(preferences);
   }
@@ -211,7 +206,7 @@ class _$_PreferencesStateSelectedOptions
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PreferencesStateSelectedOptions value)? selectedOptions,
+    TResult? Function(_PreferencesStateSelectedOptions value)? selectedOptions,
   }) {
     return selectedOptions?.call(this);
   }
@@ -230,13 +225,14 @@ class _$_PreferencesStateSelectedOptions
 }
 
 abstract class _PreferencesStateSelectedOptions implements PreferencesState {
-  const factory _PreferencesStateSelectedOptions(List<String> preferences) =
-      _$_PreferencesStateSelectedOptions;
+  const factory _PreferencesStateSelectedOptions(
+      final List<String> preferences) = _$PreferencesStateSelectedOptionsImpl;
 
   @override
   List<String> get preferences;
   @override
   @JsonKey(ignore: true)
-  _$PreferencesStateSelectedOptionsCopyWith<_PreferencesStateSelectedOptions>
+  _$$PreferencesStateSelectedOptionsImplCopyWith<
+          _$PreferencesStateSelectedOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

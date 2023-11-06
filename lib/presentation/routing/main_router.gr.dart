@@ -1,99 +1,81 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
-// ignore_for_file: type=lint
 
+// ignore_for_file: type=lint
+// coverage:ignore-file
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:dietmatcher/presentation/dishes/dishes_page.dart' as _i3;
-import 'package:dietmatcher/presentation/meal_type/meal_type_page.dart' as _i1;
+import 'package:dietmatcher/presentation/dishes/dishes_page.dart' as _i1;
+import 'package:dietmatcher/presentation/meal_type/meal_type_page.dart' as _i2;
 import 'package:dietmatcher/presentation/preferences/preferences_page.dart'
-    as _i2;
+    as _i3;
 import 'package:flutter/material.dart' as _i5;
 
-class MainRouter extends _i4.RootStackRouter {
-  MainRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class $AppRouter extends _i4.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
   final Map<String, _i4.PageFactory> pagesMap = {
-    MealTypePageRoute.name: (routeData) {
-      return _i4.AdaptivePage<dynamic>(
-          routeData: routeData, child: _i1.MealTypePage());
+    DishesRoute.name: (routeData) {
+      final args = routeData.argsAs<DishesRouteArgs>();
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i1.DishesPage(
+          key: args.key,
+          preferences: args.preferences,
+        ),
+      );
     },
-    PreferencesPageRoute.name: (routeData) {
-      final args = routeData.argsAs<PreferencesPageRouteArgs>();
-      return _i4.AdaptivePage<dynamic>(
-          routeData: routeData,
-          child: _i2.PreferencesPage(key: args.key, type: args.type));
+    MealTypeRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i2.MealTypePage(),
+      );
     },
-    DishesPageRoute.name: (routeData) {
-      final args = routeData.argsAs<DishesPageRouteArgs>();
-      return _i4.AdaptivePage<dynamic>(
-          routeData: routeData,
-          child: _i3.DishesPage(key: args.key, preferences: args.preferences));
-    }
+    PreferencesRoute.name: (routeData) {
+      final args = routeData.argsAs<PreferencesRouteArgs>();
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i3.PreferencesPage(
+          key: args.key,
+          type: args.type,
+        ),
+      );
+    },
   };
-
-  @override
-  List<_i4.RouteConfig> get routes => [
-        _i4.RouteConfig(MealTypePageRoute.name, path: '/'),
-        _i4.RouteConfig(PreferencesPageRoute.name, path: '/preferences-page'),
-        _i4.RouteConfig(DishesPageRoute.name, path: '/dishes-page')
-      ];
 }
 
 /// generated route for
-/// [_i1.MealTypePage]
-class MealTypePageRoute extends _i4.PageRouteInfo<void> {
-  const MealTypePageRoute() : super(MealTypePageRoute.name, path: '/');
+/// [_i1.DishesPage]
+class DishesRoute extends _i4.PageRouteInfo<DishesRouteArgs> {
+  DishesRoute({
+    _i5.Key? key,
+    required List<String> preferences,
+    List<_i4.PageRouteInfo>? children,
+  }) : super(
+          DishesRoute.name,
+          args: DishesRouteArgs(
+            key: key,
+            preferences: preferences,
+          ),
+          initialChildren: children,
+        );
 
-  static const String name = 'MealTypePageRoute';
+  static const String name = 'DishesRoute';
+
+  static const _i4.PageInfo<DishesRouteArgs> page =
+      _i4.PageInfo<DishesRouteArgs>(name);
 }
 
-/// generated route for
-/// [_i2.PreferencesPage]
-class PreferencesPageRoute extends _i4.PageRouteInfo<PreferencesPageRouteArgs> {
-  PreferencesPageRoute({_i5.Key? key, required String type})
-      : super(PreferencesPageRoute.name,
-            path: '/preferences-page',
-            args: PreferencesPageRouteArgs(key: key, type: type));
-
-  static const String name = 'PreferencesPageRoute';
-}
-
-class PreferencesPageRouteArgs {
-  const PreferencesPageRouteArgs({this.key, required this.type});
-
-  final _i5.Key? key;
-
-  final String type;
-
-  @override
-  String toString() {
-    return 'PreferencesPageRouteArgs{key: $key, type: $type}';
-  }
-}
-
-/// generated route for
-/// [_i3.DishesPage]
-class DishesPageRoute extends _i4.PageRouteInfo<DishesPageRouteArgs> {
-  DishesPageRoute({_i5.Key? key, required List<String> preferences})
-      : super(DishesPageRoute.name,
-            path: '/dishes-page',
-            args: DishesPageRouteArgs(key: key, preferences: preferences));
-
-  static const String name = 'DishesPageRoute';
-}
-
-class DishesPageRouteArgs {
-  const DishesPageRouteArgs({this.key, required this.preferences});
+class DishesRouteArgs {
+  const DishesRouteArgs({
+    this.key,
+    required this.preferences,
+  });
 
   final _i5.Key? key;
 
@@ -101,6 +83,58 @@ class DishesPageRouteArgs {
 
   @override
   String toString() {
-    return 'DishesPageRouteArgs{key: $key, preferences: $preferences}';
+    return 'DishesRouteArgs{key: $key, preferences: $preferences}';
+  }
+}
+
+/// generated route for
+/// [_i2.MealTypePage]
+class MealTypeRoute extends _i4.PageRouteInfo<void> {
+  const MealTypeRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          MealTypeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MealTypeRoute';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.PreferencesPage]
+class PreferencesRoute extends _i4.PageRouteInfo<PreferencesRouteArgs> {
+  PreferencesRoute({
+    _i5.Key? key,
+    required String type,
+    List<_i4.PageRouteInfo>? children,
+  }) : super(
+          PreferencesRoute.name,
+          args: PreferencesRouteArgs(
+            key: key,
+            type: type,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PreferencesRoute';
+
+  static const _i4.PageInfo<PreferencesRouteArgs> page =
+      _i4.PageInfo<PreferencesRouteArgs>(name);
+}
+
+class PreferencesRouteArgs {
+  const PreferencesRouteArgs({
+    this.key,
+    required this.type,
+  });
+
+  final _i5.Key? key;
+
+  final String type;
+
+  @override
+  String toString() {
+    return 'PreferencesRouteArgs{key: $key, type: $type}';
   }
 }
