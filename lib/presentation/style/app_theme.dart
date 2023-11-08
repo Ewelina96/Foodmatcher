@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 ThemeData themeLight() => ThemeData(
-      primarySwatch: Colors.teal,
+      useMaterial3: true,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       fontFamily: 'Lato',
       textTheme: TextTheme(
@@ -11,8 +11,13 @@ ThemeData themeLight() => ThemeData(
           color: Colors.white,
         ),
         displayMedium: TextStyle(
+          fontSize: 20.0,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+        displaySmall: TextStyle(
           fontSize: 16.0,
-          color: Colors.teal[900],
+          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
         bodyLarge: TextStyle(

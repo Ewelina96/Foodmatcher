@@ -34,7 +34,7 @@ class DishesPage extends StatelessWidget {
                 Column(children: <Widget>[
                   Text(
                     recipeState.dish.name,
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                   SizedBox(
                     height: AppDimensions.dishImagePadding,

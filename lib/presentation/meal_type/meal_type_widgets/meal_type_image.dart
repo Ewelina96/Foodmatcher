@@ -1,5 +1,4 @@
 import 'package:dietmatcher/generated/l10n.dart';
-import 'package:dietmatcher/presentation/style/app_consts.dart';
 import 'package:dietmatcher/presentation/style/app_dimensions.dart';
 import 'package:dietmatcher/presentation/style/app_images.dart';
 import 'package:flutter/material.dart';
@@ -9,25 +8,31 @@ class MealTypeImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: AppDimensions.foodImageHeight,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            blurRadius: AppConsts.foodImageBlurRadius,
-            offset: Offset(0, 2),
-          )
+    final centerStackPosition = AppDimensions.foodImageHeight / 2 -
+        (Theme.of(context).textTheme.displayMedium?.fontSize ?? 0) / 2;
+    return Padding(
+      padding: AppPadding.m,
+      child: Stack(
+        children: [
+          Container(
+            height: AppDimensions.foodImageHeight,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppDimensions.radiusMedium),
+              image: DecorationImage(
+                image: AssetImage(AppImages.foodBanner),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            left: AppDimensions.m,
+            top: centerStackPosition,
+            child: Text(
+              S.of(context).chooseYourPerfectMeal,
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
+          ),
         ],
-        image: DecorationImage(
-          image: AssetImage(Images.foodImage),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Center(
-        child: Text(
-          S.of(context).whatWouldYouLikeToEat,
-          style: Theme.of(context).textTheme.headline1,
-        ),
       ),
     );
   }

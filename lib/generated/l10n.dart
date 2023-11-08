@@ -50,11 +50,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Apply`
-  String get apply {
+  /// `Search`
+  String get search {
     return Intl.message(
-      'Apply',
-      name: 'apply',
+      'Search',
+      name: 'search',
       desc: '',
       args: [],
     );
@@ -95,6 +95,76 @@ class S {
     return Intl.message(
       'What would You like to eat?',
       name: 'whatWouldYouLikeToEat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your perfect meal`
+  String get chooseYourPerfectMeal {
+    return Intl.message(
+      'Choose your perfect meal',
+      name: 'chooseYourPerfectMeal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vegetarian`
+  String get vegetarian {
+    return Intl.message(
+      'Vegetarian',
+      name: 'vegetarian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dairy Free`
+  String get dairyFree {
+    return Intl.message(
+      'Dairy Free',
+      name: 'dairyFree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gluten Free`
+  String get glutenFree {
+    return Intl.message(
+      'Gluten Free',
+      name: 'glutenFree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Low Carb`
+  String get lowCarb {
+    return Intl.message(
+      'Low Carb',
+      name: 'lowCarb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Healthy`
+  String get healthy {
+    return Intl.message(
+      'Healthy',
+      name: 'healthy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kid Friendly`
+  String get kidFriendly {
+    return Intl.message(
+      'Kid Friendly',
+      name: 'kidFriendly',
       desc: '',
       args: [],
     );

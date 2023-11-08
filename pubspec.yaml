@@ -26,6 +26,8 @@ dependencies:
   intl: ^0.18.1
   retrofit: '>=4.0.0 <5.0.0'
   json_annotation: ^4.8.1
+  intl_utils: ^2.8.5
+  flutter_svg: ^2.0.9
 
 
 
@@ -39,11 +41,11 @@ dev_dependencies:
 
 
 flutter:
-
   uses-material-design: true
 
   assets:
-    - images/
+    - assets/images/
+    - assets/icons/
 flutter_intl:
   enabled: true
 

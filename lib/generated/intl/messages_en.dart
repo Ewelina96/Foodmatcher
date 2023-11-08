@@ -22,11 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "apply": MessageLookupByLibrary.simpleMessage("Apply"),
+        "chooseYourPerfectMeal":
+            MessageLookupByLibrary.simpleMessage("Choose your perfect meal"),
+        "dairyFree": MessageLookupByLibrary.simpleMessage("Dairy Free"),
         "foodmatcher": MessageLookupByLibrary.simpleMessage("Foodmatcher"),
+        "glutenFree": MessageLookupByLibrary.simpleMessage("Gluten Free"),
+        "healthy": MessageLookupByLibrary.simpleMessage("Healthy"),
+        "kidFriendly": MessageLookupByLibrary.simpleMessage("Kid Friendly"),
+        "lowCarb": MessageLookupByLibrary.simpleMessage("Low Carb"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "vegan": MessageLookupByLibrary.simpleMessage("Vegan"),
+        "vegetarian": MessageLookupByLibrary.simpleMessage("Vegetarian"),
         "whatWouldYouLikeToEat":
             MessageLookupByLibrary.simpleMessage("What would You like to eat?")
       };

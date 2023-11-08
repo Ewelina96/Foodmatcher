@@ -13,6 +13,5 @@ class AppRouter extends $AppRouter {
           initial: true,
         ),
         AutoRoute(page: DishesRoute.page),
-        AutoRoute(page: PreferencesRoute.page)
       ];
 }

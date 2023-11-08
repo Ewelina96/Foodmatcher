@@ -1,8 +1,15 @@
 {
-    "apply":"Apply",
+    "search":"Search",
     "vegan":"Vegan",
     "preferences":"Preferences",
     "foodmatcher":"Foodmatcher",
     "whatWouldYouLikeToEat":"What would You like to eat?",
+    "chooseYourPerfectMeal":"Choose your perfect meal",
+    "vegetarian": "Vegetarian",
+    "dairyFree":"Dairy Free",
+    "glutenFree": "Gluten Free",
+    "lowCarb":"Low Carb",
+    "healthy":"Healthy",
+    "kidFriendly":"Kid Friendly",
     "next":"Next"
 }
