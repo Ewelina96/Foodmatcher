@@ -22,17 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "carbohydrates": MessageLookupByLibrary.simpleMessage("Carbohydrates"),
         "chooseYourPerfectMeal":
             MessageLookupByLibrary.simpleMessage("Choose your perfect meal"),
         "dairyFree": MessageLookupByLibrary.simpleMessage("Dairy Free"),
+        "fat": MessageLookupByLibrary.simpleMessage("Fat"),
+        "fiber": MessageLookupByLibrary.simpleMessage("Fiber"),
         "foodmatcher": MessageLookupByLibrary.simpleMessage("Foodmatcher"),
         "glutenFree": MessageLookupByLibrary.simpleMessage("Gluten Free"),
         "healthy": MessageLookupByLibrary.simpleMessage("Healthy"),
+        "kcal": MessageLookupByLibrary.simpleMessage("Calories"),
         "kidFriendly": MessageLookupByLibrary.simpleMessage("Kid Friendly"),
         "lowCarb": MessageLookupByLibrary.simpleMessage("Low Carb"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
+        "protein": MessageLookupByLibrary.simpleMessage("Protein"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "sugar": MessageLookupByLibrary.simpleMessage("Sugar"),
         "vegan": MessageLookupByLibrary.simpleMessage("Vegan"),
         "vegetarian": MessageLookupByLibrary.simpleMessage("Vegetarian"),
         "whatWouldYouLikeToEat":

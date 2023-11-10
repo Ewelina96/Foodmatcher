@@ -25,6 +25,6 @@ class AppDimensions {
 
   static const foodImageHeight = 150.0;
 
-  static const dishImageSize = 200.0;
-  static const dishImagePadding = 16.0;
+  static const dishImageWidth = 96.0;
+  static const dishImageHeight = 120.0;
 }

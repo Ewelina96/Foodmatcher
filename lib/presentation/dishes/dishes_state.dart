@@ -3,8 +3,7 @@ part of 'dishes_cubit.dart';
 @freezed
 class DishesState with _$DishesState {
   const factory DishesState.loading() = _DishesStateLoading;
-  const factory DishesState.selectedRecipe(
-    DishDto dish,
-    bool hasNextRecipe,
+  const factory DishesState.recipesLoaded(
+    List<Dish> dish,
   ) = _DishesStateSelectedRecipe;
 }

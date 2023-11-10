@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DishRepositoryResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<DishDto> dishes) success,
+    required TResult Function(List<Dish> dishes) success,
     required TResult Function(String errorMessage) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(List<Dish> dishes)? success,
     TResult? Function(String errorMessage)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
+    TResult Function(List<Dish> dishes)? success,
     TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) =>
@@ -82,7 +82,7 @@ abstract class _$$DishRepositoryResponseSuccessImplCopyWith<$Res> {
           $Res Function(_$DishRepositoryResponseSuccessImpl) then) =
       __$$DishRepositoryResponseSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<DishDto> dishes});
+  $Res call({List<Dish> dishes});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$$DishRepositoryResponseSuccessImplCopyWithImpl<$Res>
       null == dishes
           ? _value._dishes
           : dishes // ignore: cast_nullable_to_non_nullable
-              as List<DishDto>,
+              as List<Dish>,
     ));
   }
 }
@@ -113,12 +113,12 @@ class __$$DishRepositoryResponseSuccessImplCopyWithImpl<$Res>
 
 class _$DishRepositoryResponseSuccessImpl
     implements DishRepositoryResponseSuccess {
-  const _$DishRepositoryResponseSuccessImpl(final List<DishDto> dishes)
+  const _$DishRepositoryResponseSuccessImpl(final List<Dish> dishes)
       : _dishes = dishes;
 
-  final List<DishDto> _dishes;
+  final List<Dish> _dishes;
   @override
-  List<DishDto> get dishes {
+  List<Dish> get dishes {
     if (_dishes is EqualUnmodifiableListView) return _dishes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_dishes);
@@ -152,7 +152,7 @@ class _$DishRepositoryResponseSuccessImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<DishDto> dishes) success,
+    required TResult Function(List<Dish> dishes) success,
     required TResult Function(String errorMessage) failure,
   }) {
     return success(dishes);
@@ -161,7 +161,7 @@ class _$DishRepositoryResponseSuccessImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(List<Dish> dishes)? success,
     TResult? Function(String errorMessage)? failure,
   }) {
     return success?.call(dishes);
@@ -170,7 +170,7 @@ class _$DishRepositoryResponseSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
+    TResult Function(List<Dish> dishes)? success,
     TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
@@ -213,10 +213,10 @@ class _$DishRepositoryResponseSuccessImpl
 }
 
 abstract class DishRepositoryResponseSuccess implements DishRepositoryResponse {
-  const factory DishRepositoryResponseSuccess(final List<DishDto> dishes) =
+  const factory DishRepositoryResponseSuccess(final List<Dish> dishes) =
       _$DishRepositoryResponseSuccessImpl;
 
-  List<DishDto> get dishes;
+  List<Dish> get dishes;
   @JsonKey(ignore: true)
   _$$DishRepositoryResponseSuccessImplCopyWith<
           _$DishRepositoryResponseSuccessImpl>
@@ -294,7 +294,7 @@ class _$DishRepositoryResponseFailureImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<DishDto> dishes) success,
+    required TResult Function(List<Dish> dishes) success,
     required TResult Function(String errorMessage) failure,
   }) {
     return failure(errorMessage);
@@ -303,7 +303,7 @@ class _$DishRepositoryResponseFailureImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<DishDto> dishes)? success,
+    TResult? Function(List<Dish> dishes)? success,
     TResult? Function(String errorMessage)? failure,
   }) {
     return failure?.call(errorMessage);
@@ -312,7 +312,7 @@ class _$DishRepositoryResponseFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<DishDto> dishes)? success,
+    TResult Function(List<Dish> dishes)? success,
     TResult Function(String errorMessage)? failure,
     required TResult orElse(),
   }) {
