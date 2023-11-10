@@ -13,14 +13,14 @@ DishDto _$DishDtoFromJson(Map<String, dynamic> json) => DishDto(
           ? null
           : UserRatingsDto.fromJson(
               json['user_ratings'] as Map<String, dynamic>),
-      nurition: json['nurition'] == null
+      nutrition: json['nutrition'] == null
           ? null
-          : NuritionDto.fromJson(json['nurition'] as Map<String, dynamic>),
+          : NutritionDto.fromJson(json['nutrition'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DishDtoToJson(DishDto instance) => <String, dynamic>{
       'name': instance.name,
       'thumbnail_url': instance.thumbnailUrl,
       'user_ratings': instance.userRatings,
-      'nurition': instance.nurition,
+      'nutrition': instance.nutrition,
     };

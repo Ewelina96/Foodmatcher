@@ -21,7 +21,7 @@ mixin _$Dish {
   String? get thumbnailUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_ratings')
   UserRatings? get userRatings => throw _privateConstructorUsedError;
-  Nurition? get nurition => throw _privateConstructorUsedError;
+  Nutrition? get nutrition => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DishCopyWith<Dish> get copyWith => throw _privateConstructorUsedError;
@@ -36,10 +36,10 @@ abstract class $DishCopyWith<$Res> {
       {String name,
       @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') UserRatings? userRatings,
-      Nurition? nurition});
+      Nutrition? nutrition});
 
   $UserRatingsCopyWith<$Res>? get userRatings;
-  $NuritionCopyWith<$Res>? get nurition;
+  $NutritionCopyWith<$Res>? get nutrition;
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$DishCopyWithImpl<$Res, $Val extends Dish>
     Object? name = null,
     Object? thumbnailUrl = freezed,
     Object? userRatings = freezed,
-    Object? nurition = freezed,
+    Object? nutrition = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -73,10 +73,10 @@ class _$DishCopyWithImpl<$Res, $Val extends Dish>
           ? _value.userRatings
           : userRatings // ignore: cast_nullable_to_non_nullable
               as UserRatings?,
-      nurition: freezed == nurition
-          ? _value.nurition
-          : nurition // ignore: cast_nullable_to_non_nullable
-              as Nurition?,
+      nutrition: freezed == nutrition
+          ? _value.nutrition
+          : nutrition // ignore: cast_nullable_to_non_nullable
+              as Nutrition?,
     ) as $Val);
   }
 
@@ -94,13 +94,13 @@ class _$DishCopyWithImpl<$Res, $Val extends Dish>
 
   @override
   @pragma('vm:prefer-inline')
-  $NuritionCopyWith<$Res>? get nurition {
-    if (_value.nurition == null) {
+  $NutritionCopyWith<$Res>? get nutrition {
+    if (_value.nutrition == null) {
       return null;
     }
 
-    return $NuritionCopyWith<$Res>(_value.nurition!, (value) {
-      return _then(_value.copyWith(nurition: value) as $Val);
+    return $NutritionCopyWith<$Res>(_value.nutrition!, (value) {
+      return _then(_value.copyWith(nutrition: value) as $Val);
     });
   }
 }
@@ -116,12 +116,12 @@ abstract class _$$DishImplCopyWith<$Res> implements $DishCopyWith<$Res> {
       {String name,
       @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') UserRatings? userRatings,
-      Nurition? nurition});
+      Nutrition? nutrition});
 
   @override
   $UserRatingsCopyWith<$Res>? get userRatings;
   @override
-  $NuritionCopyWith<$Res>? get nurition;
+  $NutritionCopyWith<$Res>? get nutrition;
 }
 
 /// @nodoc
@@ -137,7 +137,7 @@ class __$$DishImplCopyWithImpl<$Res>
     Object? name = null,
     Object? thumbnailUrl = freezed,
     Object? userRatings = freezed,
-    Object? nurition = freezed,
+    Object? nutrition = freezed,
   }) {
     return _then(_$DishImpl(
       name: null == name
@@ -152,10 +152,10 @@ class __$$DishImplCopyWithImpl<$Res>
           ? _value.userRatings
           : userRatings // ignore: cast_nullable_to_non_nullable
               as UserRatings?,
-      nurition: freezed == nurition
-          ? _value.nurition
-          : nurition // ignore: cast_nullable_to_non_nullable
-              as Nurition?,
+      nutrition: freezed == nutrition
+          ? _value.nutrition
+          : nutrition // ignore: cast_nullable_to_non_nullable
+              as Nutrition?,
     ));
   }
 }
@@ -167,7 +167,7 @@ class _$DishImpl implements _Dish {
       {required this.name,
       @JsonKey(name: 'thumbnail_url') this.thumbnailUrl,
       @JsonKey(name: 'user_ratings') this.userRatings,
-      this.nurition});
+      this.nutrition});
 
   @override
   final String name;
@@ -178,11 +178,11 @@ class _$DishImpl implements _Dish {
   @JsonKey(name: 'user_ratings')
   final UserRatings? userRatings;
   @override
-  final Nurition? nurition;
+  final Nutrition? nutrition;
 
   @override
   String toString() {
-    return 'Dish(name: $name, thumbnailUrl: $thumbnailUrl, userRatings: $userRatings, nurition: $nurition)';
+    return 'Dish(name: $name, thumbnailUrl: $thumbnailUrl, userRatings: $userRatings, nutrition: $nutrition)';
   }
 
   @override
@@ -195,13 +195,13 @@ class _$DishImpl implements _Dish {
                 other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.userRatings, userRatings) ||
                 other.userRatings == userRatings) &&
-            (identical(other.nurition, nurition) ||
-                other.nurition == nurition));
+            (identical(other.nutrition, nutrition) ||
+                other.nutrition == nutrition));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, thumbnailUrl, userRatings, nurition);
+      Object.hash(runtimeType, name, thumbnailUrl, userRatings, nutrition);
 
   @JsonKey(ignore: true)
   @override
@@ -215,7 +215,7 @@ abstract class _Dish implements Dish {
       {required final String name,
       @JsonKey(name: 'thumbnail_url') final String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') final UserRatings? userRatings,
-      final Nurition? nurition}) = _$DishImpl;
+      final Nutrition? nutrition}) = _$DishImpl;
 
   @override
   String get name;
@@ -226,7 +226,7 @@ abstract class _Dish implements Dish {
   @JsonKey(name: 'user_ratings')
   UserRatings? get userRatings;
   @override
-  Nurition? get nurition;
+  Nutrition? get nutrition;
   @override
   @JsonKey(ignore: true)
   _$$DishImplCopyWith<_$DishImpl> get copyWith =>

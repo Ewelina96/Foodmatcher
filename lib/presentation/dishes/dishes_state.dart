@@ -4,6 +4,6 @@ part of 'dishes_cubit.dart';
 class DishesState with _$DishesState {
   const factory DishesState.loading() = _DishesStateLoading;
   const factory DishesState.recipesLoaded(
-    List<DishDto> dish,
+    List<Dish> dish,
   ) = _DishesStateSelectedRecipe;
 }

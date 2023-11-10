@@ -11,7 +11,7 @@
 import 'package:dietmatcher/data/dish/data_sources/dish_remote_data_source.dart'
     as _i8;
 import 'package:dietmatcher/data/dish/mappers/dish_dto_mapper.dart' as _i7;
-import 'package:dietmatcher/data/dish/mappers/nurition_dto_mapper.dart' as _i5;
+import 'package:dietmatcher/data/dish/mappers/nutrition_dto_mapper.dart' as _i5;
 import 'package:dietmatcher/data/dish/mappers/user_ratings_dto_mapper.dart'
     as _i6;
 import 'package:dietmatcher/data/dish/repository/dish_repository_impl.dart'
@@ -38,16 +38,18 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.singleton<_i3.FoodMatcherDio>(_i3.FoodMatcherDio());
     gh.factory<_i4.MealCubit>(() => _i4.MealCubit());
-    gh.factory<_i5.NuritionDtoMapper>(() => _i5.NuritionDtoMapper());
+    gh.factory<_i5.NutritionDtoMapper>(() => _i5.NutritionDtoMapper());
     gh.factory<_i6.UserRatingsDtoMapper>(() => _i6.UserRatingsDtoMapper());
     gh.factory<_i7.DishDtoMapper>(() => _i7.DishDtoMapper(
           userRatingsMapper: gh<_i6.UserRatingsDtoMapper>(),
-          nuritionDtoMapper: gh<_i5.NuritionDtoMapper>(),
+          nuritionDtoMapper: gh<_i5.NutritionDtoMapper>(),
         ));
     gh.singleton<_i8.DishRemoteDataSource>(
         _i8.DishRemoteDataSource(gh<_i3.FoodMatcherDio>()));
-    gh.singleton<_i9.DishRepository>(
-        _i10.DishRepositoryImpl(gh<_i8.DishRemoteDataSource>()));
+    gh.singleton<_i9.DishRepository>(_i10.DishRepositoryImpl(
+      gh<_i7.DishDtoMapper>(),
+      gh<_i8.DishRemoteDataSource>(),
+    ));
     gh.factory<_i11.GetDishUseCase>(
         () => _i11.GetDishUseCase(gh<_i9.DishRepository>()));
     gh.factory<_i12.DishesCubit>(

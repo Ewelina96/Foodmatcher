@@ -8,7 +8,7 @@ class UserRatingsDtoMapper extends DataMapper<UserRatingsDto, UserRatings> {
   @override
   UserRatings apply(UserRatingsDto? data) {
     return UserRatings(
-      score: data?.score ?? 0.0,
+      score: (data?.score ?? 0.0) * 5,
     );
   }
 }

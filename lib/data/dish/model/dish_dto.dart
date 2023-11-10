@@ -1,4 +1,4 @@
-import 'package:dietmatcher/data/dish/model/nurition_dto.dart';
+import 'package:dietmatcher/data/dish/model/nutrition_dto.dart';
 import 'package:dietmatcher/data/dish/model/user_ratings_dto.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,13 +11,13 @@ class DishDto {
   final String? thumbnailUrl;
   @JsonKey(name: 'user_ratings')
   UserRatingsDto? userRatings;
-  NuritionDto? nurition;
+  NutritionDto? nutrition;
 
   DishDto({
     required this.name,
     this.thumbnailUrl,
     this.userRatings,
-    this.nurition,
+    this.nutrition,
   });
 
   factory DishDto.fromJson(Map<String, dynamic> json) =>

@@ -11,5 +11,11 @@
     "lowCarb":"Low Carb",
     "healthy":"Healthy",
     "kidFriendly":"Kid Friendly",
-    "next":"Next"
+    "next":"Next",
+    "kcal":"Calories",
+    "fat":"Fat",
+    "carbohydrates":"Carbohydrates",
+    "protein":"Protein",
+    "fiber":"Fiber",
+    "sugar":"Sugar"
 }

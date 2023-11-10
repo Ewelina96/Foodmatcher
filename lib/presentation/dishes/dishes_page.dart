@@ -44,42 +44,10 @@ class DishesPage extends StatelessWidget {
                       photoUrl: e.thumbnailUrl ?? '',
                       dishName: e.name,
                       score: e.userRatings?.score,
-                      // nurition: e.nurition,
+                      nurition: e.nutrition,
                     ));
               }).toList(),
             ),
-            // <Widget>[
-            //   Column(children: <Widget>[
-            //     Text(
-            //       recipeState.dish.name,
-            //       style: Theme.of(context).textTheme.displayMedium,
-            //     ),
-            //     SizedBox(
-            //       height: AppDimensions.dishImagePadding,
-            //     ),
-            //     Container(
-            //       width: AppDimensions.dishImageSize,
-            //       height: AppDimensions.dishImageSize,
-            //       decoration: BoxDecoration(
-            //         image: DecorationImage(
-            //           fit: BoxFit.cover,
-            //           image:
-            //               NetworkImage(recipeState.dish.thumbnailUrl ?? ''),
-            //         ),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       height: AppDimensions.dishImagePadding,
-            //     ),
-            //   ]),
-            // ElevatedButton(
-            //   onPressed: recipeState.hasNextRecipe == true
-            //       ? cubit.nextRecipe
-            //       : null,
-            //   child: Text(S.of(context).next),
-            // )
-            // ],
-            // ),
           ),
         ),
       ),

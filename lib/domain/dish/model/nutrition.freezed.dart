@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'nurition.dart';
+part of 'nutrition.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Nurition {
+mixin _$Nutrition {
+  int? get carbohydrates => throw _privateConstructorUsedError;
   int? get calories => throw _privateConstructorUsedError;
   int? get fat => throw _privateConstructorUsedError;
   int? get protein => throw _privateConstructorUsedError;
@@ -23,22 +24,28 @@ mixin _$Nurition {
   int? get sugar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NuritionCopyWith<Nurition> get copyWith =>
+  $NutritionCopyWith<Nutrition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NuritionCopyWith<$Res> {
-  factory $NuritionCopyWith(Nurition value, $Res Function(Nurition) then) =
-      _$NuritionCopyWithImpl<$Res, Nurition>;
+abstract class $NutritionCopyWith<$Res> {
+  factory $NutritionCopyWith(Nutrition value, $Res Function(Nutrition) then) =
+      _$NutritionCopyWithImpl<$Res, Nutrition>;
   @useResult
-  $Res call({int? calories, int? fat, int? protein, int? fiber, int? sugar});
+  $Res call(
+      {int? carbohydrates,
+      int? calories,
+      int? fat,
+      int? protein,
+      int? fiber,
+      int? sugar});
 }
 
 /// @nodoc
-class _$NuritionCopyWithImpl<$Res, $Val extends Nurition>
-    implements $NuritionCopyWith<$Res> {
-  _$NuritionCopyWithImpl(this._value, this._then);
+class _$NutritionCopyWithImpl<$Res, $Val extends Nutrition>
+    implements $NutritionCopyWith<$Res> {
+  _$NutritionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -48,6 +55,7 @@ class _$NuritionCopyWithImpl<$Res, $Val extends Nurition>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? carbohydrates = freezed,
     Object? calories = freezed,
     Object? fat = freezed,
     Object? protein = freezed,
@@ -55,6 +63,10 @@ class _$NuritionCopyWithImpl<$Res, $Val extends Nurition>
     Object? sugar = freezed,
   }) {
     return _then(_value.copyWith(
+      carbohydrates: freezed == carbohydrates
+          ? _value.carbohydrates
+          : carbohydrates // ignore: cast_nullable_to_non_nullable
+              as int?,
       calories: freezed == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
@@ -80,34 +92,45 @@ class _$NuritionCopyWithImpl<$Res, $Val extends Nurition>
 }
 
 /// @nodoc
-abstract class _$$NuritionImplCopyWith<$Res>
-    implements $NuritionCopyWith<$Res> {
-  factory _$$NuritionImplCopyWith(
-          _$NuritionImpl value, $Res Function(_$NuritionImpl) then) =
-      __$$NuritionImplCopyWithImpl<$Res>;
+abstract class _$$NutritionImplCopyWith<$Res>
+    implements $NutritionCopyWith<$Res> {
+  factory _$$NutritionImplCopyWith(
+          _$NutritionImpl value, $Res Function(_$NutritionImpl) then) =
+      __$$NutritionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? calories, int? fat, int? protein, int? fiber, int? sugar});
+  $Res call(
+      {int? carbohydrates,
+      int? calories,
+      int? fat,
+      int? protein,
+      int? fiber,
+      int? sugar});
 }
 
 /// @nodoc
-class __$$NuritionImplCopyWithImpl<$Res>
-    extends _$NuritionCopyWithImpl<$Res, _$NuritionImpl>
-    implements _$$NuritionImplCopyWith<$Res> {
-  __$$NuritionImplCopyWithImpl(
-      _$NuritionImpl _value, $Res Function(_$NuritionImpl) _then)
+class __$$NutritionImplCopyWithImpl<$Res>
+    extends _$NutritionCopyWithImpl<$Res, _$NutritionImpl>
+    implements _$$NutritionImplCopyWith<$Res> {
+  __$$NutritionImplCopyWithImpl(
+      _$NutritionImpl _value, $Res Function(_$NutritionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? carbohydrates = freezed,
     Object? calories = freezed,
     Object? fat = freezed,
     Object? protein = freezed,
     Object? fiber = freezed,
     Object? sugar = freezed,
   }) {
-    return _then(_$NuritionImpl(
+    return _then(_$NutritionImpl(
+      carbohydrates: freezed == carbohydrates
+          ? _value.carbohydrates
+          : carbohydrates // ignore: cast_nullable_to_non_nullable
+              as int?,
       calories: freezed == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
@@ -134,10 +157,17 @@ class __$$NuritionImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NuritionImpl implements _Nurition {
-  _$NuritionImpl(
-      {this.calories, this.fat, this.protein, this.fiber, this.sugar});
+class _$NutritionImpl implements _Nutrition {
+  _$NutritionImpl(
+      {this.carbohydrates,
+      this.calories,
+      this.fat,
+      this.protein,
+      this.fiber,
+      this.sugar});
 
+  @override
+  final int? carbohydrates;
   @override
   final int? calories;
   @override
@@ -151,14 +181,16 @@ class _$NuritionImpl implements _Nurition {
 
   @override
   String toString() {
-    return 'Nurition(calories: $calories, fat: $fat, protein: $protein, fiber: $fiber, sugar: $sugar)';
+    return 'Nutrition(carbohydrates: $carbohydrates, calories: $calories, fat: $fat, protein: $protein, fiber: $fiber, sugar: $sugar)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NuritionImpl &&
+            other is _$NutritionImpl &&
+            (identical(other.carbohydrates, carbohydrates) ||
+                other.carbohydrates == carbohydrates) &&
             (identical(other.calories, calories) ||
                 other.calories == calories) &&
             (identical(other.fat, fat) || other.fat == fat) &&
@@ -168,24 +200,27 @@ class _$NuritionImpl implements _Nurition {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, calories, fat, protein, fiber, sugar);
+  int get hashCode => Object.hash(
+      runtimeType, carbohydrates, calories, fat, protein, fiber, sugar);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NuritionImplCopyWith<_$NuritionImpl> get copyWith =>
-      __$$NuritionImplCopyWithImpl<_$NuritionImpl>(this, _$identity);
+  _$$NutritionImplCopyWith<_$NutritionImpl> get copyWith =>
+      __$$NutritionImplCopyWithImpl<_$NutritionImpl>(this, _$identity);
 }
 
-abstract class _Nurition implements Nurition {
-  factory _Nurition(
-      {final int? calories,
+abstract class _Nutrition implements Nutrition {
+  factory _Nutrition(
+      {final int? carbohydrates,
+      final int? calories,
       final int? fat,
       final int? protein,
       final int? fiber,
-      final int? sugar}) = _$NuritionImpl;
+      final int? sugar}) = _$NutritionImpl;
 
+  @override
+  int? get carbohydrates;
   @override
   int? get calories;
   @override
@@ -198,6 +233,6 @@ abstract class _Nurition implements Nurition {
   int? get sugar;
   @override
   @JsonKey(ignore: true)
-  _$$NuritionImplCopyWith<_$NuritionImpl> get copyWith =>
+  _$$NutritionImplCopyWith<_$NutritionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

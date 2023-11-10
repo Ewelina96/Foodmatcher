@@ -19,19 +19,19 @@ mixin _$DishesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<DishDto> dish) recipesLoaded,
+    required TResult Function(List<Dish> dish) recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<DishDto> dish)? recipesLoaded,
+    TResult? Function(List<Dish> dish)? recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<DishDto> dish)? recipesLoaded,
+    TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<DishDto> dish) recipesLoaded,
+    required TResult Function(List<Dish> dish) recipesLoaded,
   }) {
     return loading();
   }
@@ -122,7 +122,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<DishDto> dish)? recipesLoaded,
+    TResult? Function(List<Dish> dish)? recipesLoaded,
   }) {
     return loading?.call();
   }
@@ -131,7 +131,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<DishDto> dish)? recipesLoaded,
+    TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -183,7 +183,7 @@ abstract class _$$DishesStateSelectedRecipeImplCopyWith<$Res> {
           $Res Function(_$DishesStateSelectedRecipeImpl) then) =
       __$$DishesStateSelectedRecipeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<DishDto> dish});
+  $Res call({List<Dish> dish});
 }
 
 /// @nodoc
@@ -204,7 +204,7 @@ class __$$DishesStateSelectedRecipeImplCopyWithImpl<$Res>
       null == dish
           ? _value._dish
           : dish // ignore: cast_nullable_to_non_nullable
-              as List<DishDto>,
+              as List<Dish>,
     ));
   }
 }
@@ -212,12 +212,11 @@ class __$$DishesStateSelectedRecipeImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
-  const _$DishesStateSelectedRecipeImpl(final List<DishDto> dish)
-      : _dish = dish;
+  const _$DishesStateSelectedRecipeImpl(final List<Dish> dish) : _dish = dish;
 
-  final List<DishDto> _dish;
+  final List<Dish> _dish;
   @override
-  List<DishDto> get dish {
+  List<Dish> get dish {
     if (_dish is EqualUnmodifiableListView) return _dish;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_dish);
@@ -251,7 +250,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<DishDto> dish) recipesLoaded,
+    required TResult Function(List<Dish> dish) recipesLoaded,
   }) {
     return recipesLoaded(dish);
   }
@@ -260,7 +259,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<DishDto> dish)? recipesLoaded,
+    TResult? Function(List<Dish> dish)? recipesLoaded,
   }) {
     return recipesLoaded?.call(dish);
   }
@@ -269,7 +268,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<DishDto> dish)? recipesLoaded,
+    TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
   }) {
     if (recipesLoaded != null) {
@@ -311,10 +310,10 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
 }
 
 abstract class _DishesStateSelectedRecipe implements DishesState {
-  const factory _DishesStateSelectedRecipe(final List<DishDto> dish) =
+  const factory _DishesStateSelectedRecipe(final List<Dish> dish) =
       _$DishesStateSelectedRecipeImpl;
 
-  List<DishDto> get dish;
+  List<Dish> get dish;
   @JsonKey(ignore: true)
   _$$DishesStateSelectedRecipeImplCopyWith<_$DishesStateSelectedRecipeImpl>
       get copyWith => throw _privateConstructorUsedError;

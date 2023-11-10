@@ -179,6 +179,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Calories`
+  String get kcal {
+    return Intl.message(
+      'Calories',
+      name: 'kcal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fat`
+  String get fat {
+    return Intl.message(
+      'Fat',
+      name: 'fat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Carbohydrates`
+  String get carbohydrates {
+    return Intl.message(
+      'Carbohydrates',
+      name: 'carbohydrates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Protein`
+  String get protein {
+    return Intl.message(
+      'Protein',
+      name: 'protein',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fiber`
+  String get fiber {
+    return Intl.message(
+      'Fiber',
+      name: 'fiber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sugar`
+  String get sugar {
+    return Intl.message(
+      'Sugar',
+      name: 'sugar',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
