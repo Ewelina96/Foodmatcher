@@ -21,32 +21,30 @@ class DishesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BlocBuilder<DishesCubit, DishesState>(
-        bloc: cubit
-          ..init(
-            preferences,
-          ),
-        builder: (context, state) => state.maybeMap(
-          orElse: () => Container(),
-          loading: (_) => Center(
-            child: CircularProgressIndicator(color: AppColors.baseGreen),
-          ),
-          recipesLoaded: (recipeState) => Center(
-            child: ListView(
-              children: recipeState.dish.map((e) {
-                print(e.userRatings?.score);
-                return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppDimensions.m,
-                      vertical: AppDimensions.s,
-                    ),
-                    child: DishCard(
-                      photoUrl: e.thumbnailUrl ?? '',
-                      dishName: e.name,
-                      score: e.userRatings?.score,
-                      nurition: e.nutrition,
-                    ));
-              }).toList(),
+      body: SafeArea(
+        child: BlocBuilder<DishesCubit, DishesState>(
+          bloc: cubit
+            ..init(
+              preferences,
+            ),
+          builder: (context, state) => state.maybeMap(
+            orElse: () => Container(),
+            loading: (_) => Center(
+              child: CircularProgressIndicator(color: AppColors.baseGreen),
+            ),
+            recipesLoaded: (recipeState) => Center(
+              child: ListView(
+                children: recipeState.dish.map((e) {
+                  return Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppDimensions.m,
+                        vertical: AppDimensions.s,
+                      ),
+                      child: DishCard(
+                        dish: e,
+                      ));
+                }).toList(),
+              ),
             ),
           ),
         ),

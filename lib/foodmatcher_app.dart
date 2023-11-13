@@ -11,7 +11,7 @@ class Foodmatcher extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _mainRouter.config(),
-      title: 'Foodmatcher',
+      title: 'foodmatcher',
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

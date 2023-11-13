@@ -16,6 +16,10 @@ DishDto _$DishDtoFromJson(Map<String, dynamic> json) => DishDto(
       nutrition: json['nutrition'] == null
           ? null
           : NutritionDto.fromJson(json['nutrition'] as Map<String, dynamic>),
+      instructions: (json['instructions'] as List<dynamic>?)
+          ?.map((e) => InstructionDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      originalVideoUrl: json['original_video_url'] as String?,
     );
 
 Map<String, dynamic> _$DishDtoToJson(DishDto instance) => <String, dynamic>{
@@ -23,4 +27,6 @@ Map<String, dynamic> _$DishDtoToJson(DishDto instance) => <String, dynamic>{
       'thumbnail_url': instance.thumbnailUrl,
       'user_ratings': instance.userRatings,
       'nutrition': instance.nutrition,
+      'instructions': instance.instructions,
+      'original_video_url': instance.originalVideoUrl,
     };

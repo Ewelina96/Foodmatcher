@@ -11,7 +11,7 @@ class MealTypeImage extends StatelessWidget {
     final centerStackPosition = AppDimensions.foodImageHeight / 2 -
         (Theme.of(context).textTheme.displayMedium?.fontSize ?? 0) / 2;
     return Padding(
-      padding: AppPadding.m,
+      padding: EdgeInsets.symmetric(horizontal: AppDimensions.m),
       child: Stack(
         children: [
           Container(

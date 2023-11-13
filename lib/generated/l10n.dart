@@ -239,6 +239,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Ups 🙈`
+  String get ups {
+    return Intl.message(
+      'Ups 🙈',
+      name: 'ups',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid URL`
+  String get invalidURL {
+    return Intl.message(
+      'Invalid URL',
+      name: 'invalidURL',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

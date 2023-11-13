@@ -22,6 +22,9 @@ mixin _$Dish {
   @JsonKey(name: 'user_ratings')
   UserRatings? get userRatings => throw _privateConstructorUsedError;
   Nutrition? get nutrition => throw _privateConstructorUsedError;
+  List<Instruction>? get instructions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'original_video_url')
+  String? get originalVideoUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DishCopyWith<Dish> get copyWith => throw _privateConstructorUsedError;
@@ -36,7 +39,9 @@ abstract class $DishCopyWith<$Res> {
       {String name,
       @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') UserRatings? userRatings,
-      Nutrition? nutrition});
+      Nutrition? nutrition,
+      List<Instruction>? instructions,
+      @JsonKey(name: 'original_video_url') String? originalVideoUrl});
 
   $UserRatingsCopyWith<$Res>? get userRatings;
   $NutritionCopyWith<$Res>? get nutrition;
@@ -59,6 +64,8 @@ class _$DishCopyWithImpl<$Res, $Val extends Dish>
     Object? thumbnailUrl = freezed,
     Object? userRatings = freezed,
     Object? nutrition = freezed,
+    Object? instructions = freezed,
+    Object? originalVideoUrl = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -77,6 +84,14 @@ class _$DishCopyWithImpl<$Res, $Val extends Dish>
           ? _value.nutrition
           : nutrition // ignore: cast_nullable_to_non_nullable
               as Nutrition?,
+      instructions: freezed == instructions
+          ? _value.instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as List<Instruction>?,
+      originalVideoUrl: freezed == originalVideoUrl
+          ? _value.originalVideoUrl
+          : originalVideoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -116,7 +131,9 @@ abstract class _$$DishImplCopyWith<$Res> implements $DishCopyWith<$Res> {
       {String name,
       @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') UserRatings? userRatings,
-      Nutrition? nutrition});
+      Nutrition? nutrition,
+      List<Instruction>? instructions,
+      @JsonKey(name: 'original_video_url') String? originalVideoUrl});
 
   @override
   $UserRatingsCopyWith<$Res>? get userRatings;
@@ -138,6 +155,8 @@ class __$$DishImplCopyWithImpl<$Res>
     Object? thumbnailUrl = freezed,
     Object? userRatings = freezed,
     Object? nutrition = freezed,
+    Object? instructions = freezed,
+    Object? originalVideoUrl = freezed,
   }) {
     return _then(_$DishImpl(
       name: null == name
@@ -156,6 +175,14 @@ class __$$DishImplCopyWithImpl<$Res>
           ? _value.nutrition
           : nutrition // ignore: cast_nullable_to_non_nullable
               as Nutrition?,
+      instructions: freezed == instructions
+          ? _value._instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as List<Instruction>?,
+      originalVideoUrl: freezed == originalVideoUrl
+          ? _value.originalVideoUrl
+          : originalVideoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -167,7 +194,10 @@ class _$DishImpl implements _Dish {
       {required this.name,
       @JsonKey(name: 'thumbnail_url') this.thumbnailUrl,
       @JsonKey(name: 'user_ratings') this.userRatings,
-      this.nutrition});
+      this.nutrition,
+      final List<Instruction>? instructions,
+      @JsonKey(name: 'original_video_url') this.originalVideoUrl})
+      : _instructions = instructions;
 
   @override
   final String name;
@@ -179,10 +209,23 @@ class _$DishImpl implements _Dish {
   final UserRatings? userRatings;
   @override
   final Nutrition? nutrition;
+  final List<Instruction>? _instructions;
+  @override
+  List<Instruction>? get instructions {
+    final value = _instructions;
+    if (value == null) return null;
+    if (_instructions is EqualUnmodifiableListView) return _instructions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'original_video_url')
+  final String? originalVideoUrl;
 
   @override
   String toString() {
-    return 'Dish(name: $name, thumbnailUrl: $thumbnailUrl, userRatings: $userRatings, nutrition: $nutrition)';
+    return 'Dish(name: $name, thumbnailUrl: $thumbnailUrl, userRatings: $userRatings, nutrition: $nutrition, instructions: $instructions, originalVideoUrl: $originalVideoUrl)';
   }
 
   @override
@@ -196,12 +239,22 @@ class _$DishImpl implements _Dish {
             (identical(other.userRatings, userRatings) ||
                 other.userRatings == userRatings) &&
             (identical(other.nutrition, nutrition) ||
-                other.nutrition == nutrition));
+                other.nutrition == nutrition) &&
+            const DeepCollectionEquality()
+                .equals(other._instructions, _instructions) &&
+            (identical(other.originalVideoUrl, originalVideoUrl) ||
+                other.originalVideoUrl == originalVideoUrl));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, thumbnailUrl, userRatings, nutrition);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      thumbnailUrl,
+      userRatings,
+      nutrition,
+      const DeepCollectionEquality().hash(_instructions),
+      originalVideoUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -215,7 +268,10 @@ abstract class _Dish implements Dish {
       {required final String name,
       @JsonKey(name: 'thumbnail_url') final String? thumbnailUrl,
       @JsonKey(name: 'user_ratings') final UserRatings? userRatings,
-      final Nutrition? nutrition}) = _$DishImpl;
+      final Nutrition? nutrition,
+      final List<Instruction>? instructions,
+      @JsonKey(name: 'original_video_url')
+      final String? originalVideoUrl}) = _$DishImpl;
 
   @override
   String get name;
@@ -227,6 +283,11 @@ abstract class _Dish implements Dish {
   UserRatings? get userRatings;
   @override
   Nutrition? get nutrition;
+  @override
+  List<Instruction>? get instructions;
+  @override
+  @JsonKey(name: 'original_video_url')
+  String? get originalVideoUrl;
   @override
   @JsonKey(ignore: true)
   _$$DishImplCopyWith<_$DishImpl> get copyWith =>
