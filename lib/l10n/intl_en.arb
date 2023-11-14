@@ -21,5 +21,6 @@
     "sugar":"Sugar",
     "ups":"Ups 🙈",
     "invalidURL":"Invalid URL",
-    "upsYouAreTooDemanding":"Ups, you are too demanding, please change your criteria and try again"
+    "upsYouAreTooDemanding":"Ups, you are too demanding, please change your criteria and try again",
+    "upsSomethingWentWrong":"Ups, something went wrong"
 }

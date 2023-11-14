@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Ups, something went wrong`
+  String get upsSomethingWentWrong {
+    return Intl.message(
+      'Ups, something went wrong',
+      name: 'upsSomethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dietmatcher/presentation/dishes/dish_widgets/dish_card.dart';
 import 'package:dietmatcher/presentation/dishes/dish_widgets/dish_empty_view.dart';
+import 'package:dietmatcher/presentation/dishes/dish_widgets/dish_error_view.dart';
 import 'package:dietmatcher/presentation/dishes/dishes_cubit.dart';
 import 'package:dietmatcher/presentation/style/app_dimensions.dart';
 import 'package:flutter/material.dart';
@@ -17,24 +18,24 @@ class DishesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
-        minimum: AppPadding.l,
+        minimum: AppPadding.m,
         child: BlocBuilder<DishesCubit, DishesState>(
           builder: (context, state) => state.maybeMap(
-            orElse: () => Container(),
-            recipesLoaded: (recipeState) => Center(
-                child: recipeState.dish.length > 0
-                    ? ListView(
-                        children: recipeState.dish.map((e) {
-                          return Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: AppDimensions.m,
-                                vertical: AppDimensions.s,
-                              ),
-                              child: DishCard(dish: e));
-                        }).toList(),
-                      )
-                    : DishEmptyView()),
-          ),
+              orElse: () => Container(),
+              recipesLoaded: (recipeState) => Center(
+                  child: recipeState.dish.length > 0
+                      ? ListView(
+                          children: recipeState.dish.map((e) {
+                            return Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: AppDimensions.m,
+                                  vertical: AppDimensions.s,
+                                ),
+                                child: DishCard(dish: e));
+                          }).toList(),
+                        )
+                      : DishEmptyView()),
+              error: (_) => DishErrorView()),
         ),
       ),
     );
