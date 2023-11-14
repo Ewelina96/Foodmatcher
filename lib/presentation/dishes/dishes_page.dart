@@ -23,10 +23,7 @@ class DishesPage extends StatelessWidget {
       appBar: AppBar(),
       body: SafeArea(
         child: BlocBuilder<DishesCubit, DishesState>(
-          bloc: cubit
-            ..init(
-              preferences,
-            ),
+          bloc: cubit..init(preferences),
           builder: (context, state) => state.maybeMap(
             orElse: () => Container(),
             loading: (_) => Center(

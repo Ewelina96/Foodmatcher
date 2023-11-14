@@ -39,12 +39,12 @@ class _DishRemoteDataSource implements DishRemoteDataSource {
   String? baseUrl;
 
   @override
-  Future<GetDishesResponse> getDishes(Map<String, dynamic> body) async {
+  Future<GetDishesResponse> getDishes(Map<String, dynamic> query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GetDishesResponse>(Options(
       method: 'GET',

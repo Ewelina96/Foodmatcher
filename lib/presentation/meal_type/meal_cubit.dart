@@ -1,3 +1,5 @@
+import 'package:dietmatcher/presentation/meal_type/dish_option_model.dart';
+import 'package:dietmatcher/utils/functions/dish_option_to_string.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -8,15 +10,22 @@ part 'meal_state.dart';
 @injectable
 class MealCubit extends Cubit<MealState> {
   MealCubit() : super(MealState.optionsSelected([], null));
-  List<String> _preferences = [];
+  List<DishOptionModel> _preferences = [];
+  List<String> _stringPreferences = [];
 
-  void changeDishOptionState(String property) {
+  void changeDishOptionState(DishOptionModel property) {
     if (_preferences.contains(property)) {
       _preferences.remove(property);
-      emit(MealState.optionsSelected([..._preferences], state.selectedDish));
+      _stringPreferences =
+          _preferences.map((e) => dishOptionToString(e.dishOption)).toList();
+      emit(MealState.optionsSelected(
+          [..._stringPreferences], state.selectedDish));
     } else {
       _preferences.add(property);
-      emit(MealState.optionsSelected([..._preferences], state.selectedDish));
+      _stringPreferences =
+          _preferences.map((e) => dishOptionToString(e.dishOption)).toList();
+      emit(MealState.optionsSelected(
+          [..._stringPreferences], state.selectedDish));
     }
   }
 
@@ -24,7 +33,7 @@ class MealCubit extends Cubit<MealState> {
     emit(MealState.optionsSelected(state.preferences, dish));
   }
 
-  bool checkIfOptionIsSelected(String property) {
+  bool checkIfOptionIsSelected(DishOptionModel property) {
     return _preferences.contains(property);
   }
 }

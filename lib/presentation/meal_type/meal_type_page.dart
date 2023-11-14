@@ -22,12 +22,12 @@ enum DishType {
 
 enum DishOption {
   vegan,
-  vegetarian,
-  glutenFree,
-  dairyFree,
-  lowCarb,
-  healthy,
-  kidFriendly,
+  nynm_veggie,
+  dietary,
+  dairy_free,
+  low_carb,
+  tasty_ewd_healthy,
+  kid_friendly,
 }
 
 @RoutePage()
@@ -92,10 +92,8 @@ class MealTypePage extends StatelessWidget {
                           return PreferenceButton(
                             name: element.name,
                             iconPath: element.iconPath,
-                            isSelected:
-                                cubit.checkIfOptionIsSelected(element.name),
-                            onTap: () =>
-                                cubit.changeDishOptionState(element.name),
+                            isSelected: cubit.checkIfOptionIsSelected(element),
+                            onTap: () => cubit.changeDishOptionState(element),
                           );
                         },
                       ).toList(),

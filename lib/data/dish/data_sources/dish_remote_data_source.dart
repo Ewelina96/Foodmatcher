@@ -16,7 +16,7 @@ abstract class DishRemoteDataSource {
   factory DishRemoteDataSource(FoodMatcherDio dio) = _DishRemoteDataSource;
 
   @GET(NetworkConfiguration.recipeList)
-  Future<GetDishesResponse> getDishes(@Body() Map<String, dynamic> body);
+  Future<GetDishesResponse> getDishes(@Queries() Map<String, dynamic> query);
 }
 
 @freezed

@@ -24,7 +24,7 @@ Map<String, dynamic> _$$DishSearchParamsImplToJson(
     }
   }
 
-  writeNotNull('tags', instance.tags);
+  writeNotNull('tags', tagsToJson(instance.tags));
   writeNotNull('from', instance.from);
   writeNotNull('to', instance.to);
   return val;

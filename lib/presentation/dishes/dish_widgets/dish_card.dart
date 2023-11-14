@@ -17,7 +17,6 @@ class DishCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(dish.instructions);
     return GestureDetector(
       onTap: () => AutoRouter.of(context).push(
         DishDetailsRoute(

@@ -21,27 +21,27 @@ final dishOptions = [
       name: S.current.vegan,
       iconPath: AppIcons.vegan),
   DishOptionModel(
-      dishOption: DishOption.vegetarian,
+      dishOption: DishOption.nynm_veggie,
       name: S.current.vegetarian,
       iconPath: AppIcons.vegetarian),
   DishOptionModel(
-      dishOption: DishOption.dairyFree,
+      dishOption: DishOption.dairy_free,
       name: S.current.dairyFree,
       iconPath: AppIcons.dairyFree),
   DishOptionModel(
-      dishOption: DishOption.glutenFree,
+      dishOption: DishOption.dietary,
       name: S.current.glutenFree,
       iconPath: AppIcons.glutenFree),
   DishOptionModel(
-      dishOption: DishOption.lowCarb,
+      dishOption: DishOption.low_carb,
       name: S.current.lowCarb,
       iconPath: AppIcons.lowCarb),
   DishOptionModel(
-      dishOption: DishOption.healthy,
+      dishOption: DishOption.tasty_ewd_healthy,
       name: S.current.healthy,
       iconPath: AppIcons.healthy),
   DishOptionModel(
-      dishOption: DishOption.kidFriendly,
+      dishOption: DishOption.kid_friendly,
       name: S.current.kidFriendly,
       iconPath: AppIcons.kidFriendly)
 ];

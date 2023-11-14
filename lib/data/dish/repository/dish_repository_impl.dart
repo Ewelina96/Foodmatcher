@@ -25,7 +25,6 @@ class DishRepositoryImpl extends DishRepository {
       return DishRepositoryResponse.success(dishes);
     } catch (e, stacktrace) {
       print(stacktrace.toString());
-
       return DishRepositoryResponse.failure(e.toString());
     }
   }

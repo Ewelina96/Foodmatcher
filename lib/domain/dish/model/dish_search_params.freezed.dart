@@ -20,6 +20,7 @@ DishSearchParams _$DishSearchParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DishSearchParams {
+  @JsonKey(toJson: tagsToJson)
   List<String>? get tags => throw _privateConstructorUsedError;
   String? get from => throw _privateConstructorUsedError;
   String? get to => throw _privateConstructorUsedError;
@@ -36,7 +37,10 @@ abstract class $DishSearchParamsCopyWith<$Res> {
           DishSearchParams value, $Res Function(DishSearchParams) then) =
       _$DishSearchParamsCopyWithImpl<$Res, DishSearchParams>;
   @useResult
-  $Res call({List<String>? tags, String? from, String? to});
+  $Res call(
+      {@JsonKey(toJson: tagsToJson) List<String>? tags,
+      String? from,
+      String? to});
 }
 
 /// @nodoc
@@ -81,7 +85,10 @@ abstract class _$$DishSearchParamsImplCopyWith<$Res>
       __$$DishSearchParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<String>? tags, String? from, String? to});
+  $Res call(
+      {@JsonKey(toJson: tagsToJson) List<String>? tags,
+      String? from,
+      String? to});
 }
 
 /// @nodoc
@@ -120,7 +127,10 @@ class __$$DishSearchParamsImplCopyWithImpl<$Res>
 
 @JsonSerializable(includeIfNull: false)
 class _$DishSearchParamsImpl implements _DishSearchParams {
-  _$DishSearchParamsImpl({final List<String>? tags, this.from, this.to})
+  _$DishSearchParamsImpl(
+      {@JsonKey(toJson: tagsToJson) final List<String>? tags,
+      this.from,
+      this.to})
       : _tags = tags;
 
   factory _$DishSearchParamsImpl.fromJson(Map<String, dynamic> json) =>
@@ -128,6 +138,7 @@ class _$DishSearchParamsImpl implements _DishSearchParams {
 
   final List<String>? _tags;
   @override
+  @JsonKey(toJson: tagsToJson)
   List<String>? get tags {
     final value = _tags;
     if (value == null) return null;
@@ -178,7 +189,7 @@ class _$DishSearchParamsImpl implements _DishSearchParams {
 
 abstract class _DishSearchParams implements DishSearchParams {
   factory _DishSearchParams(
-      {final List<String>? tags,
+      {@JsonKey(toJson: tagsToJson) final List<String>? tags,
       final String? from,
       final String? to}) = _$DishSearchParamsImpl;
 
@@ -186,6 +197,7 @@ abstract class _DishSearchParams implements DishSearchParams {
       _$DishSearchParamsImpl.fromJson;
 
   @override
+  @JsonKey(toJson: tagsToJson)
   List<String>? get tags;
   @override
   String? get from;
