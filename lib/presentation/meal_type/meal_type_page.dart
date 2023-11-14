@@ -104,8 +104,11 @@ class MealTypePage extends StatelessWidget {
                   width: 200,
                   child: MealTypeButton(
                     onPressed: () {
-                      AutoRouter.of(context)
-                          .push(DishesRoute(preferences: state.preferences));
+                      AutoRouter.of(context).push(DishesRoute(
+                          preferences: state.selectedDish != null
+                              ? ([...state.preferences]
+                                ..add(state.selectedDish!))
+                              : state.preferences));
                     },
                     text: S.of(context).search,
                   ),

@@ -30,7 +30,9 @@ class MealCubit extends Cubit<MealState> {
   }
 
   void selectDish(String dish) {
+    print(dish);
     emit(MealState.optionsSelected(state.preferences, dish));
+    print(state);
   }
 
   bool checkIfOptionIsSelected(DishOptionModel property) {
