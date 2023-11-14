@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "foodmatcher": MessageLookupByLibrary.simpleMessage("Foodmatcher"),
         "glutenFree": MessageLookupByLibrary.simpleMessage("Gluten Free"),
         "healthy": MessageLookupByLibrary.simpleMessage("Healthy"),
+        "invalidURL": MessageLookupByLibrary.simpleMessage("Invalid URL"),
         "kcal": MessageLookupByLibrary.simpleMessage("Calories"),
         "kidFriendly": MessageLookupByLibrary.simpleMessage("Kid Friendly"),
         "lowCarb": MessageLookupByLibrary.simpleMessage("Low Carb"),
@@ -39,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "protein": MessageLookupByLibrary.simpleMessage("Protein"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sugar": MessageLookupByLibrary.simpleMessage("Sugar"),
+        "ups": MessageLookupByLibrary.simpleMessage("Ups 🙈"),
         "vegan": MessageLookupByLibrary.simpleMessage("Vegan"),
         "vegetarian": MessageLookupByLibrary.simpleMessage("Vegetarian"),
         "whatWouldYouLikeToEat":

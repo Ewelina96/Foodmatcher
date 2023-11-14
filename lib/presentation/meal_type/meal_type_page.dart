@@ -48,6 +48,7 @@ class MealTypePage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
+        minimum: EdgeInsets.symmetric(vertical: AppDimensions.l),
         child: BlocBuilder<MealCubit, MealState>(
             bloc: cubit,
             builder: (context, state) {
