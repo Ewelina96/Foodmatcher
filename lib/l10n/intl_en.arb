@@ -20,5 +20,6 @@
     "fiber":"Fiber",
     "sugar":"Sugar",
     "ups":"Ups 🙈",
-    "invalidURL":"Invalid URL"
+    "invalidURL":"Invalid URL",
+    "upsYouAreTooDemanding":"Ups, you are too demanding, please change your criteria and try again"
 }

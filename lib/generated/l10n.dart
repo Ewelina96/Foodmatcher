@@ -269,6 +269,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Ups, you are too demanding, please change your criteria and try again`
+  String get upsYouAreTooDemanding {
+    return Intl.message(
+      'Ups, you are too demanding, please change your criteria and try again',
+      name: 'upsYouAreTooDemanding',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

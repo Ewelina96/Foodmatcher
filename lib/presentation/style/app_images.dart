@@ -1,6 +1,7 @@
 class AppImages {
   static const foodImage = "assets/images/food.jpg";
   static const foodBanner = "assets/images/banner.jpg";
+  static const errorCat = "assets/images/error_cat.svg";
 }
 
 class AppIcons {

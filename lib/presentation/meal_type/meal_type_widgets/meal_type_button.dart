@@ -34,7 +34,9 @@ class MealTypeButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              child ?? SizedBox(),
+              Padding(
+                  padding: EdgeInsets.only(right: AppDimensions.m),
+                  child: child ?? SizedBox()),
               Text(
                 text.toUpperCase(),
                 style: Theme.of(context).textTheme.displaySmall,
