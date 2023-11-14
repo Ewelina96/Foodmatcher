@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Searching`
+  String get searching {
+    return Intl.message(
+      'Searching',
+      name: 'searching',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Vegan`
   String get vegan {
     return Intl.message(

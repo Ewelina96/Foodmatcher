@@ -13,9 +13,10 @@ part 'dishes_cubit.freezed.dart';
 class DishesCubit extends Cubit<DishesState> {
   GetDishUseCase _getDishUseCase;
 
-  DishesCubit(this._getDishUseCase) : super(DishesState.loading());
+  DishesCubit(this._getDishUseCase) : super(DishesState.init());
 
   init(List<String> tags) async {
+    emit(DishesState.loading());
     final response = await _getDishUseCase(DishSearchParams(
       tags: tags,
       from: '0',

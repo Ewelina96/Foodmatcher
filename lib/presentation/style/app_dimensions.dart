@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppPadding {
-  static const xs = EdgeInsets.all(4.0);
-  static const s = EdgeInsets.all(8.0);
-  static const m = EdgeInsets.all(16.0);
+  static const xs = EdgeInsets.all(AppDimensions.xs);
+  static const s = EdgeInsets.all(AppDimensions.s);
+  static const m = EdgeInsets.all(AppDimensions.m);
 }
 
 class AppDimensions {

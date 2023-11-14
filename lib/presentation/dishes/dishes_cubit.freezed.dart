@@ -18,18 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DishesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Dish> dish) recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Dish> dish)? recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
@@ -37,18 +40,21 @@ mixin _$DishesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_DishesStateInit value) init,
     required TResult Function(_DishesStateLoading value) loading,
     required TResult Function(_DishesStateSelectedRecipe value) recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DishesStateInit value)? init,
     TResult? Function(_DishesStateLoading value)? loading,
     TResult? Function(_DishesStateSelectedRecipe value)? recipesLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DishesStateInit value)? init,
     TResult Function(_DishesStateLoading value)? loading,
     TResult Function(_DishesStateSelectedRecipe value)? recipesLoaded,
     required TResult orElse(),
@@ -72,6 +78,114 @@ class _$DishesStateCopyWithImpl<$Res, $Val extends DishesState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$DishesStateInitImplCopyWith<$Res> {
+  factory _$$DishesStateInitImplCopyWith(_$DishesStateInitImpl value,
+          $Res Function(_$DishesStateInitImpl) then) =
+      __$$DishesStateInitImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DishesStateInitImplCopyWithImpl<$Res>
+    extends _$DishesStateCopyWithImpl<$Res, _$DishesStateInitImpl>
+    implements _$$DishesStateInitImplCopyWith<$Res> {
+  __$$DishesStateInitImplCopyWithImpl(
+      _$DishesStateInitImpl _value, $Res Function(_$DishesStateInitImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DishesStateInitImpl implements _DishesStateInit {
+  const _$DishesStateInitImpl();
+
+  @override
+  String toString() {
+    return 'DishesState.init()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DishesStateInitImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(List<Dish> dish) recipesLoaded,
+  }) {
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(List<Dish> dish)? recipesLoaded,
+  }) {
+    return init?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(List<Dish> dish)? recipesLoaded,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DishesStateInit value) init,
+    required TResult Function(_DishesStateLoading value) loading,
+    required TResult Function(_DishesStateSelectedRecipe value) recipesLoaded,
+  }) {
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DishesStateInit value)? init,
+    TResult? Function(_DishesStateLoading value)? loading,
+    TResult? Function(_DishesStateSelectedRecipe value)? recipesLoaded,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DishesStateInit value)? init,
+    TResult Function(_DishesStateLoading value)? loading,
+    TResult Function(_DishesStateSelectedRecipe value)? recipesLoaded,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DishesStateInit implements DishesState {
+  const factory _DishesStateInit() = _$DishesStateInitImpl;
 }
 
 /// @nodoc
@@ -112,6 +226,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Dish> dish) recipesLoaded,
   }) {
@@ -121,6 +236,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Dish> dish)? recipesLoaded,
   }) {
@@ -130,6 +246,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
@@ -143,6 +260,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_DishesStateInit value) init,
     required TResult Function(_DishesStateLoading value) loading,
     required TResult Function(_DishesStateSelectedRecipe value) recipesLoaded,
   }) {
@@ -152,6 +270,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DishesStateInit value)? init,
     TResult? Function(_DishesStateLoading value)? loading,
     TResult? Function(_DishesStateSelectedRecipe value)? recipesLoaded,
   }) {
@@ -161,6 +280,7 @@ class _$DishesStateLoadingImpl implements _DishesStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DishesStateInit value)? init,
     TResult Function(_DishesStateLoading value)? loading,
     TResult Function(_DishesStateSelectedRecipe value)? recipesLoaded,
     required TResult orElse(),
@@ -249,6 +369,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(List<Dish> dish) recipesLoaded,
   }) {
@@ -258,6 +379,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(List<Dish> dish)? recipesLoaded,
   }) {
@@ -267,6 +389,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(List<Dish> dish)? recipesLoaded,
     required TResult orElse(),
@@ -280,6 +403,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_DishesStateInit value) init,
     required TResult Function(_DishesStateLoading value) loading,
     required TResult Function(_DishesStateSelectedRecipe value) recipesLoaded,
   }) {
@@ -289,6 +413,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DishesStateInit value)? init,
     TResult? Function(_DishesStateLoading value)? loading,
     TResult? Function(_DishesStateSelectedRecipe value)? recipesLoaded,
   }) {
@@ -298,6 +423,7 @@ class _$DishesStateSelectedRecipeImpl implements _DishesStateSelectedRecipe {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DishesStateInit value)? init,
     TResult Function(_DishesStateLoading value)? loading,
     TResult Function(_DishesStateSelectedRecipe value)? recipesLoaded,
     required TResult orElse(),

@@ -35,13 +35,11 @@ abstract class $AppRouter extends _i4.RootStackRouter {
       );
     },
     DishesRoute.name: (routeData) {
-      final args = routeData.argsAs<DishesRouteArgs>();
+      final args = routeData.argsAs<DishesRouteArgs>(
+          orElse: () => const DishesRouteArgs());
       return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.DishesPage(
-          key: args.key,
-          preferences: args.preferences,
-        ),
+        child: _i2.DishesPage(key: args.key),
       );
     },
     MealTypeRoute.name: (routeData) {
@@ -111,14 +109,10 @@ class DishDetailsRouteArgs {
 class DishesRoute extends _i4.PageRouteInfo<DishesRouteArgs> {
   DishesRoute({
     _i6.Key? key,
-    required List<String> preferences,
     List<_i4.PageRouteInfo>? children,
   }) : super(
           DishesRoute.name,
-          args: DishesRouteArgs(
-            key: key,
-            preferences: preferences,
-          ),
+          args: DishesRouteArgs(key: key),
           initialChildren: children,
         );
 
@@ -129,18 +123,13 @@ class DishesRoute extends _i4.PageRouteInfo<DishesRouteArgs> {
 }
 
 class DishesRouteArgs {
-  const DishesRouteArgs({
-    this.key,
-    required this.preferences,
-  });
+  const DishesRouteArgs({this.key});
 
   final _i6.Key? key;
 
-  final List<String> preferences;
-
   @override
   String toString() {
-    return 'DishesRouteArgs{key: $key, preferences: $preferences}';
+    return 'DishesRouteArgs{key: $key}';
   }
 }
 

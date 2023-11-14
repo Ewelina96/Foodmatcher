@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
         "protein": MessageLookupByLibrary.simpleMessage("Protein"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searching": MessageLookupByLibrary.simpleMessage("Searching"),
         "sugar": MessageLookupByLibrary.simpleMessage("Sugar"),
         "ups": MessageLookupByLibrary.simpleMessage("Ups 🙈"),
         "vegan": MessageLookupByLibrary.simpleMessage("Vegan"),

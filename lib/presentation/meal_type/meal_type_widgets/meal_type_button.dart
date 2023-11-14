@@ -7,12 +7,14 @@ class MealTypeButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.isSelected = false,
+    this.child,
     Key? key,
   }) : super(key: key);
 
   final Function() onPressed;
   final String text;
   final bool isSelected;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,18 @@ class MealTypeButton extends StatelessWidget {
               color: isSelected ? AppColors.mediumGreen : AppColors.baseGreen,
               borderRadius:
                   BorderRadius.circular(AppDimensions.standardBorderRadius)),
-          child: Center(
-              child: Text(
-            text.toUpperCase(),
-            style: Theme.of(context).textTheme.displaySmall,
-          )),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              child ?? SizedBox(),
+              Text(
+                text.toUpperCase(),
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
+            ],
+          ),
         ),
       ),
     );
