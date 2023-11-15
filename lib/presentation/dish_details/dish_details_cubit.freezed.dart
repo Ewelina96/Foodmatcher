@@ -19,7 +19,8 @@ mixin _$DishDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(VideoPlayerController videoController)
+    required TResult Function(
+            VideoPlayerController videoController, bool videoState)
         initialized,
     required TResult Function() showPhoto,
     required TResult Function(String error) failure,
@@ -28,7 +29,8 @@ mixin _$DishDetailsState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(VideoPlayerController videoController)? initialized,
+    TResult? Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult? Function()? showPhoto,
     TResult? Function(String error)? failure,
   }) =>
@@ -36,7 +38,8 @@ mixin _$DishDetailsState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(VideoPlayerController videoController)? initialized,
+    TResult Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult Function()? showPhoto,
     TResult Function(String error)? failure,
     required TResult orElse(),
@@ -129,7 +132,8 @@ class _$DishDetailsStateLoadingImpl implements _DishDetailsStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(VideoPlayerController videoController)
+    required TResult Function(
+            VideoPlayerController videoController, bool videoState)
         initialized,
     required TResult Function() showPhoto,
     required TResult Function(String error) failure,
@@ -141,7 +145,8 @@ class _$DishDetailsStateLoadingImpl implements _DishDetailsStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(VideoPlayerController videoController)? initialized,
+    TResult? Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult? Function()? showPhoto,
     TResult? Function(String error)? failure,
   }) {
@@ -152,7 +157,8 @@ class _$DishDetailsStateLoadingImpl implements _DishDetailsStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(VideoPlayerController videoController)? initialized,
+    TResult Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult Function()? showPhoto,
     TResult Function(String error)? failure,
     required TResult orElse(),
@@ -212,7 +218,7 @@ abstract class _$$DishDetailsStateInitializedImplCopyWith<$Res> {
           $Res Function(_$DishDetailsStateInitializedImpl) then) =
       __$$DishDetailsStateInitializedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({VideoPlayerController videoController});
+  $Res call({VideoPlayerController videoController, bool videoState});
 }
 
 /// @nodoc
@@ -229,12 +235,17 @@ class __$$DishDetailsStateInitializedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? videoController = null,
+    Object? videoState = null,
   }) {
     return _then(_$DishDetailsStateInitializedImpl(
       videoController: null == videoController
           ? _value.videoController
           : videoController // ignore: cast_nullable_to_non_nullable
               as VideoPlayerController,
+      videoState: null == videoState
+          ? _value.videoState
+          : videoState // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -243,14 +254,17 @@ class __$$DishDetailsStateInitializedImplCopyWithImpl<$Res>
 
 class _$DishDetailsStateInitializedImpl
     implements _DishDetailsStateInitialized {
-  const _$DishDetailsStateInitializedImpl({required this.videoController});
+  const _$DishDetailsStateInitializedImpl(
+      {required this.videoController, required this.videoState});
 
   @override
   final VideoPlayerController videoController;
+  @override
+  final bool videoState;
 
   @override
   String toString() {
-    return 'DishDetailsState.initialized(videoController: $videoController)';
+    return 'DishDetailsState.initialized(videoController: $videoController, videoState: $videoState)';
   }
 
   @override
@@ -259,11 +273,13 @@ class _$DishDetailsStateInitializedImpl
         (other.runtimeType == runtimeType &&
             other is _$DishDetailsStateInitializedImpl &&
             (identical(other.videoController, videoController) ||
-                other.videoController == videoController));
+                other.videoController == videoController) &&
+            (identical(other.videoState, videoState) ||
+                other.videoState == videoState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoController);
+  int get hashCode => Object.hash(runtimeType, videoController, videoState);
 
   @JsonKey(ignore: true)
   @override
@@ -276,36 +292,39 @@ class _$DishDetailsStateInitializedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(VideoPlayerController videoController)
+    required TResult Function(
+            VideoPlayerController videoController, bool videoState)
         initialized,
     required TResult Function() showPhoto,
     required TResult Function(String error) failure,
   }) {
-    return initialized(videoController);
+    return initialized(videoController, videoState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(VideoPlayerController videoController)? initialized,
+    TResult? Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult? Function()? showPhoto,
     TResult? Function(String error)? failure,
   }) {
-    return initialized?.call(videoController);
+    return initialized?.call(videoController, videoState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(VideoPlayerController videoController)? initialized,
+    TResult Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult Function()? showPhoto,
     TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(videoController);
+      return initialized(videoController, videoState);
     }
     return orElse();
   }
@@ -350,10 +369,11 @@ class _$DishDetailsStateInitializedImpl
 
 abstract class _DishDetailsStateInitialized implements DishDetailsState {
   const factory _DishDetailsStateInitialized(
-          {required final VideoPlayerController videoController}) =
-      _$DishDetailsStateInitializedImpl;
+      {required final VideoPlayerController videoController,
+      required final bool videoState}) = _$DishDetailsStateInitializedImpl;
 
   VideoPlayerController get videoController;
+  bool get videoState;
   @JsonKey(ignore: true)
   _$$DishDetailsStateInitializedImplCopyWith<_$DishDetailsStateInitializedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -402,7 +422,8 @@ class _$DishDetailsStateShowPhotoImpl implements _DishDetailsStateShowPhoto {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(VideoPlayerController videoController)
+    required TResult Function(
+            VideoPlayerController videoController, bool videoState)
         initialized,
     required TResult Function() showPhoto,
     required TResult Function(String error) failure,
@@ -414,7 +435,8 @@ class _$DishDetailsStateShowPhotoImpl implements _DishDetailsStateShowPhoto {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(VideoPlayerController videoController)? initialized,
+    TResult? Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult? Function()? showPhoto,
     TResult? Function(String error)? failure,
   }) {
@@ -425,7 +447,8 @@ class _$DishDetailsStateShowPhotoImpl implements _DishDetailsStateShowPhoto {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(VideoPlayerController videoController)? initialized,
+    TResult Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult Function()? showPhoto,
     TResult Function(String error)? failure,
     required TResult orElse(),
@@ -546,7 +569,8 @@ class _$DishDetailsStateFailureImpl implements _DishDetailsStateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(VideoPlayerController videoController)
+    required TResult Function(
+            VideoPlayerController videoController, bool videoState)
         initialized,
     required TResult Function() showPhoto,
     required TResult Function(String error) failure,
@@ -558,7 +582,8 @@ class _$DishDetailsStateFailureImpl implements _DishDetailsStateFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(VideoPlayerController videoController)? initialized,
+    TResult? Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult? Function()? showPhoto,
     TResult? Function(String error)? failure,
   }) {
@@ -569,7 +594,8 @@ class _$DishDetailsStateFailureImpl implements _DishDetailsStateFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(VideoPlayerController videoController)? initialized,
+    TResult Function(VideoPlayerController videoController, bool videoState)?
+        initialized,
     TResult Function()? showPhoto,
     TResult Function(String error)? failure,
     required TResult orElse(),

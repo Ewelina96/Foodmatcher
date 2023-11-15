@@ -3,10 +3,12 @@ import 'package:dietmatcher/domain/dish/model/instruction.dart';
 import 'package:dietmatcher/generated/l10n.dart';
 import 'package:dietmatcher/injection/injection.dart';
 import 'package:dietmatcher/presentation/dish_details/dish_details_cubit.dart';
+import 'package:dietmatcher/presentation/dish_details/dish_details_widgets/video_content_view.dart';
+import 'package:dietmatcher/presentation/dish_details/dish_details_widgets/video_loader.dart';
 import 'package:dietmatcher/presentation/style/app_dimensions.dart';
+import 'package:dietmatcher/presentation/widgets/error_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:video_player/video_player.dart';
 
 @RoutePage()
 class DishDetailsPage extends StatelessWidget {
@@ -46,40 +48,28 @@ class DishDetailsPage extends StatelessWidget {
                     ?.copyWith(color: Colors.black),
               ),
             ),
-            BlocBuilder<DishDetailsCubit, DishDetailsState>(
-                bloc: cubit,
-                builder: (context, state) {
-                  return state.maybeMap(
-                    orElse: () => Text('Smth went wrong'),
-                    loading: (_) => Center(
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: AppPadding.m,
-                              child: LinearProgressIndicator(
-                                minHeight: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    initialized: (state) => AspectRatio(
-                        aspectRatio: 1,
-                        child: VideoPlayer(state.videoController)),
-                    showPhoto: (state) => photoUrl != null
-                        ? AspectRatio(
-                            aspectRatio: 1,
-                            child: Image.network(
-                              photoUrl!,
-                              fit: BoxFit.cover,
-                            ))
-                        : SizedBox(),
-                  );
-                }),
+            BlocProvider(
+              create: (context) => cubit,
+              child: BlocBuilder<DishDetailsCubit, DishDetailsState>(
+                  bloc: cubit,
+                  builder: (context, state) {
+                    return state.maybeMap(
+                      orElse: () => Container(),
+                      failure: (_) =>
+                          ErrorContent(text: S.current.upsSomethingWentWrong),
+                      loading: (_) => Center(child: VideoLoader()),
+                      initialized: (state) => VideoContentView(),
+                      showPhoto: (state) => photoUrl != null
+                          ? AspectRatio(
+                              aspectRatio: 1,
+                              child: Image.network(
+                                photoUrl!,
+                                fit: BoxFit.cover,
+                              ))
+                          : SizedBox(),
+                    );
+                  }),
+            ),
             Expanded(
               child: ListView(
                 children: instructions

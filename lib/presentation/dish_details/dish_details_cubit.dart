@@ -16,10 +16,30 @@ class DishDetailsCubit extends Cubit<DishDetailsState> {
       _controller = VideoPlayerController.networkUrl(Uri.parse(url))
         ..initialize().then((_) {
           _controller.play();
-          emit(DishDetailsState.initialized(videoController: _controller));
+          emit(DishDetailsState.initialized(
+            videoController: _controller,
+            videoState: true,
+          ));
         });
     } else {
       emit(DishDetailsState.showPhoto());
     }
+  }
+
+  changeVideoState() {
+    if (_controller.value.isPlaying) {
+      _controller.pause();
+      emit(DishDetailsState.initialized(
+        videoController: _controller,
+        videoState: false,
+      ));
+    } else {
+      _controller.play();
+      emit(DishDetailsState.initialized(
+        videoController: _controller,
+        videoState: true,
+      ));
+    }
+    ;
   }
 }

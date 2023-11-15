@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dietmatcher/generated/l10n.dart';
 import 'package:dietmatcher/injection/injection.dart';
+import 'package:dietmatcher/presentation/dishes/dishes_cubit.dart';
 import 'package:dietmatcher/presentation/meal_type/meal_cubit.dart';
+import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/dish_options_grid.dart';
+import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/dish_type_list.dart';
 import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/meal_type_image.dart';
-import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/preference_button.dart';
-import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/meal_type_button.dart';
+import 'package:dietmatcher/presentation/meal_type/meal_type_widgets/search_button.dart';
 import 'package:dietmatcher/presentation/routing/main_router.gr.dart';
-import 'package:dietmatcher/presentation/style/app_consts.dart';
 import 'package:dietmatcher/presentation/style/app_dimensions.dart';
-import 'package:dietmatcher/utils/functions/dish_type_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -47,74 +47,28 @@ class MealTypePage extends StatelessWidget {
               ?.copyWith(color: Colors.black),
         ),
       ),
-      body: SafeArea(
-        minimum: EdgeInsets.symmetric(vertical: AppDimensions.l),
-        child: BlocBuilder<MealCubit, MealState>(
-            bloc: cubit,
-            builder: (context, state) {
-              return Column(children: [
-                MealTypeImage(),
-                Padding(
-                  padding: EdgeInsets.only(top: AppDimensions.m),
-                  child: SizedBox(
-                    height: AppDimensions.buttonHeight,
-                    width: double.infinity,
-                    child: ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        SizedBox(width: AppDimensions.s),
-                        ...dishesType.map((dish) {
-                          final selectedDish = dishTypeToString(dish);
-                          return MealTypeButton(
-                            isSelected: state.selectedDish == selectedDish,
-                            onPressed: () {
-                              cubit.selectDish(selectedDish);
-                            },
-                            text: selectedDish,
-                          );
-                        }).toList()
-                      ].toList(),
-                    ),
-                  ),
-                ),
-                SizedBox(height: AppDimensions.l),
-                Expanded(
-                  child: GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 3,
-                    padding: AppPadding.s,
-                    mainAxisSpacing: AppDimensions.s,
-                    crossAxisSpacing: AppDimensions.s,
-                    children: [
-                      ...dishOptions.map(
-                        (element) {
-                          return PreferenceButton(
-                            name: element.name,
-                            iconPath: element.iconPath,
-                            isSelected: cubit.checkIfOptionIsSelected(element),
-                            onTap: () => cubit.changeDishOptionState(element),
-                          );
-                        },
-                      ).toList(),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 200,
-                  child: MealTypeButton(
-                    onPressed: () {
-                      AutoRouter.of(context).push(DishesRoute(
-                          preferences: state.selectedDish != null
-                              ? ([...state.preferences]
-                                ..add(state.selectedDish!))
-                              : state.preferences));
-                    },
-                    text: S.of(context).search,
-                  ),
-                ),
-              ]);
-            }),
+      body: BlocConsumer<DishesCubit, DishesState>(
+        listener: (context, dishesState) => dishesState.maybeWhen(
+          orElse: () => null,
+          recipesLoaded: (_) => AutoRouter.of(context).push(DishesRoute()),
+        ),
+        builder: (context, dishesState) => SafeArea(
+          minimum: EdgeInsets.symmetric(vertical: AppDimensions.l),
+          child: BlocProvider(
+            create: (context) => cubit,
+            child: BlocBuilder<MealCubit, MealState>(
+                bloc: cubit,
+                builder: (context, state) {
+                  return Column(children: [
+                    MealTypeImage(),
+                    DishTypeList(),
+                    SizedBox(height: AppDimensions.m),
+                    Expanded(child: DishOptionsGrid()),
+                    SearchButton(),
+                  ]);
+                }),
+          ),
+        ),
       ),
     );
   }

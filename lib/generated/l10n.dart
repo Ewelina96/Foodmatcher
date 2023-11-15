@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Searching`
+  String get searching {
+    return Intl.message(
+      'Searching',
+      name: 'searching',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Vegan`
   String get vegan {
     return Intl.message(
@@ -255,6 +265,26 @@ class S {
     return Intl.message(
       'Invalid URL',
       name: 'invalidURL',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ups, you are too demanding, please change your criteria and try again`
+  String get upsYouAreTooDemanding {
+    return Intl.message(
+      'Ups, you are too demanding, please change your criteria and try again',
+      name: 'upsYouAreTooDemanding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ups, something went wrong`
+  String get upsSomethingWentWrong {
+    return Intl.message(
+      'Ups, something went wrong',
+      name: 'upsSomethingWentWrong',
       desc: '',
       args: [],
     );
